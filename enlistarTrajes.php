@@ -18,7 +18,7 @@
     <script type="text/javascript">
         function confirmDelete(){
         var respuesta = confirm("¿Esta seguro que desea eliminar este producto de la lista?");
-        if(respuesta == true){
+        if(respuesta === true){
             return true;
         }
         else{
@@ -186,7 +186,7 @@
                                                                                   
                         </select>
                             
-                            <button type="submit" class="btn btn-danger" onclick="confirmDelete()"> <img class="me-2" src="lmnts_grfcs/eliminar.png" width="20" height="20"></button>
+                            <button type="submit" class="btn btn-danger" onclick="return confirmDelete()"> <img class="me-2" src="lmnts_grfcs/eliminar.png" width="20" height="20"></button>
                             
                         </div>
                          
