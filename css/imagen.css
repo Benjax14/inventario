@@ -11,7 +11,7 @@ nav{
 }
 
 body{
-    background-image: url(../lmnts_grfcs/fondo4.jpg);
+    background-image: url("../lmnts_grfcs/fondo4.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -23,7 +23,7 @@ body{
 }
 
 table{
-    background-image: url(../lmnts_grfcs/fondo5.jpg);
+    background-image: url("../lmnts_grfcs/fondo5.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
