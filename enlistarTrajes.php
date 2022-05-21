@@ -36,7 +36,6 @@
 
 <body>      
 
-    <?php include('./header.php')?>
     <?php include('./modelos/enlistarTrajesBackend.php')?>
 
     <div class="row justify-content-center">
