@@ -1,0 +1,38 @@
+
+:root{
+    --prim-color: #e8c39e;
+    --sec-color: #eaccad;
+    --ter-color: #f3dbc3;
+    --qua-color: #fdecda;
+    --qui-color: #fff6ed;
+}
+
+body{
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,0.19659201571253504) 0%, rgba(47,255,35,0.1) 25%) !important;
+}
+
+.bg-light{
+    background-color: rgba(255,255,255,0.3) !important;
+}
+
+.container-bg{
+    background-image: url('../inventario/lmnts_grfcs/header-bg.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.container-bg .comentario{
+    opacity: 0.5;
+    filter:  alpha(opacity=50);
+}
+
+a{
+    color: white !important;
+}
+
+.navbar a:hover{
+    color: cyan !important;
+    text-shadow: 0 0 8px cyan;
+}

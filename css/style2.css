@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=Noto+Sans+JP:wght@300&display=swap');
+        
+:root{
+    --prim-color: #E1ECF9;
+    --sec-color: #609CE1;
+    --ter-color: #236AB9;
+    --qua-color: #133863;
+    --qui-color: #091D34;
+}
+
+body{
+    background: #e1ecf9 !important;
+    /*background: linear-gradient(0deg, rgba(255,255,255,0.19659201571253504) 0%, rgba(190,20,47,0.1) 14%) !important;*/
+    font-family: 'Lora', serif  !important;
+}
+
+footer{
+    background-color: #091D34;
+}
+
+.texto-bar{
+    color: #091d34 !important;
+}
+
+.bg-light{
+    background-color: rgba(255,255,255,0.3) !important;
+}
+
+.container-bg{
+    background-color:  #236ab9 !important;
+}
+
+.comentario{
+    background-color: #133863;
+    border-radius: 3%;
+}
+
+a{
+    color: white !important;
+}
+
+.hover-primary{
+    color:white !important;
+}
+.hover-primary:hover{
+    color: var(--prim-color) !important;
+}
+
+.navbar a:hover{
+    color: cyan !important;
+    text-shadow: 0 0 8px cyan;
+}
+
+
+.mostrarnt{
+    display: none !important;
+}
+
+.btn-bg{
+    background-color: #236ab9 !important;
+}
+
+.btn-a{
+    background-color: #609CE1 !important;
+}
+
+.ul-drop{
+    background-color: #609CE1 !important;
+}
