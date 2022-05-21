@@ -12,7 +12,11 @@
 		integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
 		crossorigin="anonymous">
     </script>
-
+    <style>
+    .mostrarnt{
+        display: none;
+    }
+    </style>
 </head>
 
 <body>
