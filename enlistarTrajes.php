@@ -15,6 +15,17 @@
 		crossorigin="anonymous">       
     </script>
 
+    <script type="text/javascript">
+        function confirmDelete(){
+        var respuesta = confirm("¿Esta seguro que desea eliminar este producto de la lista?");
+        if(respuesta == true){
+            return true;
+        }
+        else{
+            return false;
+        } 
+    }
+    </script>
     <style>
     .mostrarnt{
         display: none;
@@ -175,7 +186,7 @@
                                                                                   
                         </select>
                             
-                            <button type="submit" class="btn btn-danger"> <img class="me-2" src="lmnts_grfcs/eliminar.png" width="20" height="20"></button>
+                            <button type="submit" class="btn btn-danger" onclick="confirmDelete()"> <img class="me-2" src="lmnts_grfcs/eliminar.png" width="20" height="20"></button>
                             
                         </div>
                          
