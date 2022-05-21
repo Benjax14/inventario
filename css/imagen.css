@@ -1,0 +1,43 @@
+nav{
+    background-image: url(../lmnts_grfcs/header3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    width: 100%;
+}
+
+body{
+    background-image: url(../lmnts_grfcs/fondo4.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    width: 100%;
+}
+
+table{
+    background-image: url(../lmnts_grfcs/fondo5.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    width: 100%;
+}
+
+.container{
+    background: rgba(255, 99, 71, 0);
+}
+
+.mostrarnt{
+    display: none;
+}
