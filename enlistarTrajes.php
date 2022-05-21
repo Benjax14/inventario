@@ -166,7 +166,7 @@
                 <br>        
 
                 <div class="col-1 justify-content-center align-self-center">
-                    <form action="./modelos/eliminarBackend.php" method="POST">
+                    <form action="./modelos/eliminarProductoBackend.php" method="POST">
                         <div>
                             
                         <select class="mostrarnt" name="Prod">
