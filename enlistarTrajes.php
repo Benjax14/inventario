@@ -1,26 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    
-    <title>Admin</title>
-    
-    <script
-		src="https://code.jquery.com/jquery-3.6.0.js"
-		integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-		crossorigin="anonymous">       
+<body> 
+
+    <script type="text/javascript">
+        function confirmDelete(){
+        var respuesta = confirm("¿Esta seguro que desea eliminar este producto de la lista?");
+        if(respuesta === true){
+            return true;
+        }
+        else{
+            return false;
+        } 
+    }
     </script>
-        
-</head>
 
-<body>      
-
-    <?php include('./header.php')?>
-    <?php include('./modelos/enlistarTrajesBackend.php')?>
+    <?php include('./modelos/enlistarTrajesBackend.php');?>
 
     <div class="row justify-content-center">
             <div class="col-auto" style="margin-top: 15px"> 
@@ -160,7 +152,7 @@
                 <br>        
 
                 <div class="col-1 justify-content-center align-self-center">
-                    <form action="./modelos/eliminarBackend.php" method="POST">
+                    <form action="./modelos/eliminarProductoBackend.php" method="POST">
                         <div>
                             
                         <select class="mostrarnt" name="Prod">
@@ -169,7 +161,7 @@
                                                                                   
                         </select>
                             
-                            <button type="submit" class="btn btn-danger"> <img class="me-2" src="lmnts_grfcs/eliminar.png" width="20" height="20"></button>
+                            <button type="submit" class="btn btn-danger" onclick="return confirmDelete()"> <img class="me-2" src="lmnts_grfcs/eliminar.png" width="20" height="20"></button>
                             
                         </div>
                          
