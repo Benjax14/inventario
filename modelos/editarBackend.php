@@ -13,7 +13,7 @@
         $estado = mysqli_real_escape_string ($con, $_POST["select"]);
         
         $consultaEditar = "UPDATE producto set marca='".$marca_produc."', nombre='".$nombre_produc."', id_estado='".$estado."', precio='".$precio."', stock='".$stock."', id_talla='".$talla."', id_cat='".$categoria."' WHERE id='".$id."'";
-        echo $consultaEditar;
+        //echo $consultaEditar;
         mysqli_query($con, $consultaEditar);
 
         unset($_POST["marca_produc"]);
