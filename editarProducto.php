@@ -13,7 +13,6 @@
         $id_talla = $_POST['tal'];
         $id_estado = $_POST['est'];
         $id_cat = $_POST['cat'];
-   
     ?>
 
     <div class="container mt-3 pb-5 pt-3 cont-css">
@@ -123,10 +122,10 @@
                     </select>       
                 </div>
 
-                <!-- <div class="col-md-8 mt-3">
+                <div class="col-md-8 mt-3">
                     <h6 for="formFile" class="form-label">Adjunte imagenes</h6>
                     <input class="form-control" name="imagen" type="file" id="formFile" multiple accept="image/*" value="<?php echo $imagen ?>">
-                </div>-->
+                </div>
 
             </div>
             
