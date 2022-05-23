@@ -4,6 +4,12 @@ function checkInputs() {
     const nombre = document.getElementById('nombre_cliente').value;
     const fono = document.getElementById('fono_cliente').value;
     var fecha = document.getElementById('fecha').value;
+    expresionRegular = /^[a-zA-ZÀ-ÿ\s]{1,}$/
+
+    if(!expresionRegular.test(nombre)){
+        alert('Solo se permiten letras');
+        return false;
+    }
 
     if(fono < 100000000 || fono > 999999999){
         alert('El numero de telefono no es valido');
