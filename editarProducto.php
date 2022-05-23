@@ -13,7 +13,6 @@
         $id_talla = $_POST['tal'];
         $id_estado = $_POST['est'];
         $id_cat = $_POST['cat'];
-   
     ?>
 
     <div class="container mt-3 pb-5 pt-3 cont-css">

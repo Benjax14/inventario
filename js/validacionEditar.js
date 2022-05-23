@@ -7,6 +7,7 @@ function checkInputs() {
     const talla = document.getElementById("talla").value;
     const categoria = document.getElementById("cat").value;
     const estado = document.getElementById("estado").value;
+    expresionRegular = /^[a-zA-ZÀ-ÿ0-9\s]{1,}$/
 
     if(marca === '' || titulo === ''){
         alert('No puede tener espacios vacios');
@@ -32,6 +33,9 @@ function checkInputs() {
         alert('Seleccione un estado');
         return false;
     }
-
+    if(!expresionRegular.test(marca) || !expresionRegular.test(titulo)){
+        alert("Solo admite letras y números")
+        return false;
+    }
     
 }
