@@ -122,10 +122,10 @@
                     </select>       
                 </div>
 
-                <!-- <div class="col-md-8 mt-3">
+                <div class="col-md-8 mt-3">
                     <h6 for="formFile" class="form-label">Adjunte imagenes</h6>
                     <input class="form-control" name="imagen" type="file" id="formFile" multiple accept="image/*" value="<?php echo $imagen ?>">
-                </div>-->
+                </div>
 
             </div>
             
