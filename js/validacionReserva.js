@@ -11,7 +11,7 @@ function checkInputs() {
         return false;
     }
 
-    if(fono < 100000000 || fono > 999999999){
+    if(fono.length < 8 || fono.length > 8){
         alert('El numero de telefono no es valido');
         return false;
     }

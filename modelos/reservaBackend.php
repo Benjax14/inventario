@@ -41,11 +41,13 @@
         unset($_POST["fono_cliente"]);
         unset($_POST["fecha"]);
         
-        header("Location:../agendarReserva.php");
+        echo '<script language="javascript">alert("Reserva exitosa!");window.location.href="../agendarReserva.php"</script>';
+        //header("Location:../agendarReserva.php");
         
         }else{
 
-            header("Location:../agendarReserva.php");
+            echo '<script language="javascript">alert("Hubo un error");window.location.href="../agendarReserva.php"</script>';
+            //header("Location:../agendarReserva.php");
 
         }
 
