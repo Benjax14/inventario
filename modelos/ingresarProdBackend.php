@@ -4,8 +4,6 @@ $consultaNombre = "SELECT nombre FROM producto";
 $consultaNombreC = mysqli_query($con,$consultaNombre);
 ?>
 
-
-
 <?php
     include_once("conexion.php");
     

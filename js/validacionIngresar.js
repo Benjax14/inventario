@@ -8,19 +8,19 @@ function valid(){
 
 
 if(marca === '' || nombre === '' || precio === '' || stock === ''){
-    alert("Debe llenar todos los datos requeridos para el producto");
+    alert('Debe llenar todos los datos requeridos para el producto');
     return false;
 }
 if(talla === '-Seleccione una talla-' || categoria === '-Seleccione la categoria-'){
-    alert("es necesario seleccionar las casillas faltantes");
+    alert('es necesario seleccionar las casillas faltantes');
     return false;
 }
 if(precio<3000){
-    alert("no puede ingresar un monto inferior a $5.000");
+    alert('no puede ingresar un monto inferior a $5.000');
     return false;
 }
 if(stock=="0"){
-    alert("no puede registrar 0 stock del producto");
+    alert('no puede registrar 0 stock del producto');
     return false;
 }
 }
