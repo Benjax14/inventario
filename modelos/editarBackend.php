@@ -1,5 +1,5 @@
 <?php
-    include_once("conexion.php");
+    include("conexion.php");
     
     if(!empty($_POST)) {
         
@@ -7,14 +7,13 @@
         $marca_produc = mysqli_real_escape_string ($con, $_POST["marca_produc"]);
         $nombre_produc = mysqli_real_escape_string ($con, $_POST["nombre_produc"]);
         $talla = mysqli_real_escape_string ($con, $_POST["select_talla"]);
-        //$imagen = addslashes(file_get_contents($_FILES['imagen']['tmp_name']));
-        $precio = mysqli_real_escape_string ($con, $_POST["precio_pr"]);
+        $precio = mysqli_real_escape_string ($con, $_POST["precio"]);
         $stock = mysqli_real_escape_string ($con, $_POST["stock"]);
+        $color = mysqli_real_escape_string ($con, $_POST["select_color"]);
         $categoria = mysqli_real_escape_string ($con, $_POST["select_cat"]);
         $estado = mysqli_real_escape_string ($con, $_POST["select"]);
 
-        $consultaEditar = "UPDATE producto set marca='".$marca_produc."', nombre='".$nombre_produc."', id_estado='".$estado."', precio='".$precio."', stock='".$stock."', id_talla='".$talla."', id_cat='".$categoria."' WHERE id='".$id."'";
-        //echo $consultaEditar;
+        $consultaEditar = "UPDATE producto set marca='".$marca_produc."', nombre='".$nombre_produc."', id_estado='".$estado."', precio='".$precio."', id_col='".$color."', stock='".$stock."', id_talla='".$talla."', id_cat='".$categoria."' WHERE id='".$id."'";
         mysqli_query($con, $consultaEditar);
 
         unset($_POST["marca_produc"]);
@@ -25,7 +24,7 @@
         unset($_POST["select_cat"]);
         unset($_POST["select"]);    
 
-        echo '<script language="javascript">alert("Producto Editado");window.location.href="../index.php"</script>';
+        header("Location:../index.php");
          
     }
     

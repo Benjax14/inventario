@@ -1,6 +1,6 @@
 <?php
 
-    require_once("conexion.php");
+    require("conexion.php");
 
     $consultaPuede = "SELECT * FROM se_puede";
     $consultaPue = mysqli_query($con, $consultaPuede);
@@ -9,9 +9,9 @@
 
 <?php
 
-    require_once("conexion.php");
+    require("conexion.php");    
 
-    $id = $_POST['Prod'];
+    $id = $_POST['prod'];
 
     foreach($consultaPue as $row):
 
@@ -23,8 +23,8 @@
     
     }else{
     
-    $eliminar = "DELETE FROM producto WHERE id = '".$id."' ";
-    $eli = mysqli_query($con, $eliminar);
+        $eliminar = "DELETE FROM producto WHERE id = '".$id."' ";
+        mysqli_query($con, $eliminar);
 
         echo '<script language="javascript">alert("Producto eliminado!");window.location.href="../index.php"</script>';
         //header("location:../index.php");
