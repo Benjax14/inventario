@@ -78,9 +78,9 @@
                 </div>
 
                 <div class="col-md-4">
-                    <h6>Categoría</h6>
+                    <h6>Categoria</h6>
                     <select id="cat" name="select_cat" class="form-select" value="<?php echo $id_cat; ?>">
-                        <option>-Seleccione la categoría-</option>
+                        <option>-Seleccione la categoria-</option>
                         <?php foreach($consultaCat as $row):?>
 
                             <?php

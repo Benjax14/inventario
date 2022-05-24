@@ -1,10 +1,4 @@
 <?php
-include_once("conexion.php");
-$consultaNombre = "SELECT nombre FROM producto";
-$consultaNombreC = mysqli_query($con,$consultaNombre);
-?>
-
-<?php
     include_once("conexion.php");
     
     if(!empty($_POST)){
@@ -30,6 +24,7 @@ $consultaNombreC = mysqli_query($con,$consultaNombre);
         unset($_POST["select"]);    
         
         header("Location:../ingresarProducto.php");
+
     }
     
 ?>
