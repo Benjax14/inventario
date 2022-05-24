@@ -25,7 +25,7 @@
         unset($_POST["select_cat"]);
         unset($_POST["select"]);    
 
-        header("Location:../index.php");
+        echo '<script language="javascript">alert("Producto Editado");window.location.href="../index.php"</script>';
          
     }
     
