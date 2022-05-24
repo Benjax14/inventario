@@ -29,13 +29,13 @@
             <tr>
               <th>ID</th>
               <th>Marca</th>
-              <th>Titulo</th>
+              <th>Título</th>
               <th>Imagen</th>
               <th>Stock</th>
               <th>Precio</th>
               <th>Talla</th>
               <th>Estado</th>
-              <th>Categoria</th>
+              <th>Categoría</th>
               <th>Acciones</th>
             </tr>
             
