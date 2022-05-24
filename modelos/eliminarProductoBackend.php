@@ -2,7 +2,7 @@
 
     include_once("conexion.php");
 
-    $ConsultaID = "SELECT id FROM se_puede";
+    $ConsultaID = "SELECT * FROM se_puede";
     $ConsultaIDP = mysqli_query($con, $ConsultaID);
     
 ?>
