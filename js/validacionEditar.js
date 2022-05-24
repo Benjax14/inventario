@@ -1,5 +1,4 @@
 function checkInputs() {
-    //En proceso...
     const marca = document.getElementById('marca').value;
     const titulo = document.getElementById('titulo_producto').value;
     const precio = document.getElementById('precio_producto').value;
