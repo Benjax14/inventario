@@ -9,7 +9,7 @@ nav{
 }
 
 body{
-    background-image: url("../lmnts_grfcs/fondo4.jpg");
+    background-image: url(../lmnts_grfcs/fondo4.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -21,14 +21,14 @@ body{
 }
 
 table{
-    background-image: url("../lmnts_grfcs/fondo5.jpg");
+    background-image: url(../lmnts_grfcs/fondo5.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
     margin: 0px;
     padding: 0px;
-    height: 20%;
+    height: 40%;
     width: 100%;
 }
 

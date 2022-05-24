@@ -1,22 +1,11 @@
-<body> 
+<body>      
 
-    <script type="text/javascript">
-        function confirmDelete(){
-        var respuesta = confirm("¿Esta seguro que desea eliminar este producto de la lista?");
-        if(respuesta === true){
-            return true;
-        }
-        else{
-            return false;
-        } 
-    }
-    </script>
-
-    <?php include('./modelos/enlistarTrajesBackend.php');?>
+    <?php require('./header.php'); ?>
+    <?php require('./modelos/enlistarTrajesBackend.php'); ?>
 
     <div class="row justify-content-center">
             <div class="col-auto" style="margin-top: 15px"> 
-                <h1>Listado de trajes y accesorios</h1>
+                <h1><a href="EasterEgg.php"><img height="20" width="20" src="./lmnts_grfcs/pascua.png"></a>-Listado de trajes y accesorios-<a href="EasterEgg.php"><img height="20" width="20" src="./lmnts_grfcs/pascua.png"></a></h1>
             </div>
     </div>
     
@@ -24,8 +13,8 @@
 
     <hr>
 
-        <table class="table table-striped table-bordered">
-
+        <table class="table table-striped table-bordered table-responsive">
+        
             <tr>
               <th>ID</th>
               <th>Marca</th>
@@ -33,6 +22,7 @@
               <th>Imagen</th>
               <th>Stock</th>
               <th>Precio</th>
+              <th>Color</th>
               <th>Talla</th>
               <th>Estado</th>
               <th>Categoria</th>
@@ -49,6 +39,7 @@
                     $imagen = $rows['img'];
                     $stock = $rows['stock'];
                     $precio = $rows['precio'];
+                    $id_color = $rows['id_col'];
                     $id_talla = $rows['id_talla'];
                     $id_estado = $rows['id_estado'];
                     $id_cat = $rows['id_cat'];
@@ -57,9 +48,18 @@
               <td><?php echo $id_traje;?></td>
               <td><?php echo $marca;?></td>
               <td><?php echo $titulo;?></td>
-              <td><img height="80" width="80" src="data:image/*;base64,<?php echo base64_encode($imagen); ?>"></td>
+              <td><a href="verImagen.php?id=<?php echo $id_traje ?>"><img height="80" width="80" src="data:image/*;base64,<?php echo base64_encode($imagen); ?>"></a></td>
               <td><?php echo $stock;?></td>
               <td>$<?php echo $precio;?></td>
+              <td>
+
+                    <?php foreach($consultaCol as $row):?>
+                        <?php if($row['id_col'] == $id_color){?>
+                            <?php echo $row['nom_col'];?>
+                        <?php } ?> 
+                    <?php endforeach?>
+
+              </td>
               <td>
 
                  <?php foreach($consultaTal as $row):?>
@@ -130,6 +130,10 @@
                             <option selected value="<?php echo $precio; ?>"></option>                                                                                  
                         </select>
 
+                        <select class="mostrarnt" name="col" required>                               
+                            <option selected value="<?php echo $id_color; ?>"></option>                                                                                  
+                        </select>
+
                         <select class="mostrarnt" name="tal" required>                               
                             <option selected value="<?php echo $id_talla; ?>"></option>                                                                                  
                         </select>
@@ -155,13 +159,13 @@
                     <form action="./modelos/eliminarProductoBackend.php" method="POST">
                         <div>
                             
-                        <select class="mostrarnt" name="Prod">
+                        <select class="mostrarnt" name="prod" required>
                                                        
                             <option selected value="<?php echo $id_traje; ?>"></option>
                                                                                   
                         </select>
                             
-                            <button type="submit" class="btn btn-danger" onclick="return confirmDelete()"> <img class="me-2" src="lmnts_grfcs/eliminar.png" width="20" height="20"></button>
+                            <button class="btn btn-danger"> <img class="me-2" src="lmnts_grfcs/eliminar.png" width="20" height="20"></button>
                             
                         </div>
                          
@@ -179,6 +183,7 @@
     
     <!--SCRIPTS ÚTILES-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>                 
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> 
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+     
 </body>
 </html>
