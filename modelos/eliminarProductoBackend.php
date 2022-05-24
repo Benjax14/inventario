@@ -11,9 +11,10 @@
 
     include("conexion.php");
 
+    $id = $_POST['Prod'];
+
     foreach($ConsultaIDP as $row):
     $id_traje = $row['id']; 
-    $id = $_POST['Prod'];
 
     if($id == $id_traje){
 
@@ -23,7 +24,8 @@
 
     $sql = "DELETE FROM producto WHERE id = '".$id."'";
     mysqli_query($con, $sql);
-    echo '<script language="javascript">alert("Producto Eliminado");window.location.href="../index.php"</script>';
+    echo '<script language="javascript">alert("Producto Editado");window.location.href="../index.php"</script>';
+
     }
 
     endforeach;
