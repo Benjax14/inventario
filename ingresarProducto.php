@@ -4,7 +4,7 @@
     <?php include('./modelos/ingresarProdBackend.php')?>  
 
     <div class="container mt-3 pb-5 pt-3 cont-css">
-        <form action="modelos/ingresarProdBackend.php" method="POST" enctype="multipart/form-data" name="formulario" id="ingreso" onsubmit="return valid();">
+        <form action="modelos/ingresarProdBackend.php" method="POST" enctype="multipart/form-data" name="formulario" onsubmit="return valid();">
             <div class = "row justify-content-center">
                 <div class="col-auto"> 
                     <h1>Registro de producto</h1>
