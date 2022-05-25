@@ -22,7 +22,7 @@
         $fono = mysqli_real_escape_string ($con, $_POST["fono_cliente"]);       
         $fecha = mysqli_real_escape_string ($con, $_POST["fecha"]);
 
-        if($id_traje == $id && $stock > 0){
+        if($id_traje == $id || $stock > 0){
 
         $CrearReserva="INSERT INTO reserva (nombre_cliente, num_cliente, fecha_arriendo, id_status) VALUES
         ('".$nombre."', '".$fono."', '".$fecha."', 1);";
