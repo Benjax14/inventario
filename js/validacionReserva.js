@@ -4,7 +4,7 @@ function checkInputs() {
     const nombre = document.getElementById('nombre_cliente').value;
     const fono = document.getElementById('fono_cliente').value;
     var fecha = document.getElementById('fecha').value;
-    expresionRegular = /^[a-zA-ZÀ-ÿ\s]{1,}$/
+    expresionRegular = /^[a-zA-ZÀ-ÿ\s]{1,50}$/
 
     if(!expresionRegular.test(nombre)){
         alert('Solo se permiten letras');
