@@ -23,8 +23,8 @@
                     <div class="navbar-nav">
                         <a class="nav-link texto-bar" href="ingresarProducto.php">Ingresar un producto al sistema</a>
                         <a class="nav-link texto-bar" href="agendarReserva.php">Hacer una reserva</a>
-                        <a class="nav-link texto-bar" href="VerReserva.php">Ver reservas</a>
-                        <a class="nav-link texto-bar" href="">Resumen de reservas</a>
+                        <!--<a class="nav-link texto-bar" href="VerReserva.php">Ver reservas</a>
+                        <a class="nav-link texto-bar" href="">Resumen de reservas</a>-->
                     </div>
                 </div>
             </div>
