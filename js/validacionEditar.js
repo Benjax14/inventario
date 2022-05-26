@@ -1,7 +1,7 @@
 function checkInputs() {
     //En proceso...
-    const marca = document.getElementById('marca').value;
-    const titulo = document.getElementById('titulo_producto').value;
+    const marca = document.getElementById('marca_produc').value;
+    const titulo = document.getElementById('nombre_produc').value;
     const precio = document.getElementById('precio').value;
     const stock = document.getElementById('stock').value; 
     const talla = document.getElementById("talla").value;
