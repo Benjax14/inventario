@@ -2,11 +2,13 @@ function checkInputs() {
     //En proceso...
     const marca = document.getElementById('marca').value;
     const titulo = document.getElementById('titulo_producto').value;
-    const precio = document.getElementById('precio_producto').value;
-    const stock = document.getElementById('sto').value; 
+    const precio = document.getElementById('precio').value;
+    const stock = document.getElementById('stock').value; 
     const talla = document.getElementById("talla").value;
     const categoria = document.getElementById("cat").value;
     const estado = document.getElementById("estado").value;
+    const color = document.getElementById("color").value;
+    
     expresionRegular = /^[a-zA-ZÀ-ÿ0-9\s]{1,}$/
 
     if(marca === '' || titulo === ''){
@@ -31,6 +33,10 @@ function checkInputs() {
     }
     if(estado === "-Seleccione estado-"){
         alert('Seleccione un estado');
+        return false;
+    }
+    if(color === "-Seleccione color-"){
+        alert('Seleccione un color');
         return false;
     }
     if(!expresionRegular.test(marca) || !expresionRegular.test(titulo)){
