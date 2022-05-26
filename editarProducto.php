@@ -37,17 +37,17 @@
 
                 <div class="col-md-4">
                     <h6>Marca</h6>
-                    <input class="input-group mb-3 form-control" type="text" name="marca_produc" id="marca_produc" value="<?php echo $marca; ?>" placeholder="Escriba aquí..." required>
+                    <input class="input-group mb-3 form-control" type="text" name="marca_produc" id="marca_produc" value="<?php echo $marca; ?>" placeholder="Escriba aquí...">
                 </div>
 
                 <div class="col-md-4">
                     <h6>Nombre del producto</h6>
-                    <input class="input-group mb-3 form-control" type="text" name="nombre_produc" id="nombre_produc" placeholder="Escriba aquí..." value="<?php echo $titulo; ?>" required>
+                    <input class="input-group mb-3 form-control" type="text" name="nombre_produc" id="nombre_produc" placeholder="Escriba aquí..." value="<?php echo $titulo; ?>" >
                 </div>
 
                 <div class="col-md-4">
                     <h6>Precio $</h6>
-                    <input type="number" name="precio" class="input-group mb-3 form-control" id="precio" placeholder="Ingrese valor..." value="<?php echo $precio; ?>" required>
+                    <input type="number" name="precio" class="input-group mb-3 form-control" id="precio" placeholder="Ingrese valor..." value="<?php echo $precio; ?>" >
                 </div>
             </div>
 
@@ -55,12 +55,12 @@
 
                 <div class="col-md-4">
                     <h6>Stock</h6>
-                    <input type="number" name="stock" class="input-group mb-3 form-control" id="stock" placeholder="Ingrese stock..." value="<?php echo $stock; ?>" required>
+                    <input type="number" name="stock" class="input-group mb-3 form-control" id="stock" placeholder="Ingrese stock..." value="<?php echo $stock; ?>" >
                 </div>
 
                 <div class="col-md-4">
                 <h6>Talla</h6>
-                    <select name="select_talla" class="form-select" value="<?php echo $id_talla; ?>" required>
+                    <select name="select_talla" id="talla" class="form-select" value="<?php echo $id_talla; ?>" >
                         <option>-Seleccione una talla-</option>
                         <?php foreach($consultaTal as $row):?>
 
@@ -81,7 +81,7 @@
 
                 <div class="col-md-4">
                     <h6>Categoria</h6>
-                    <select name="select_cat" class="form-select" value="<?php echo $id_cat; ?>" required>
+                    <select name="select_cat" id="cat" class="form-select" value="<?php echo $id_cat; ?>" >
                         <option>-Seleccione la categoria-</option>
                         <?php foreach($consultaCat as $row):?>
 
@@ -105,7 +105,7 @@
 
                 <div class="col-md-4">
                     <h6>Estado del producto</h6>
-                    <select name="select" class="form-select" value="<?php echo $id_estado; ?>" required>
+                    <select name="select" id="estado" class="form-select" value="<?php echo $id_estado; ?>" >
                         <option>-Seleccione estado-</option>
                         <?php foreach($consultaEst as $row):?>
 
@@ -126,7 +126,7 @@
 
                 <div class="col-md-4">
                     <h6>Color del producto</h6>
-                    <select name="select_color" class="form-select" value="<?php echo $id_color; ?>" required>
+                    <select name="select_color" id="color" class="form-select" value="<?php echo $id_color; ?>" >
                         <option>-Seleccione color-</option>
                         <?php foreach($consultaCol as $row):?>
 
