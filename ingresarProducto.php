@@ -17,12 +17,12 @@
 
                 <div class="col-md-4">
                     <h6>Marca del producto</h6>
-                    <input type="text" class="input-group mb-3 form-control" name="marca_produc" id="marca_produc" placeholder="Escriba aqui..." required>
+                    <input type="text" class="input-group mb-3 form-control" name="marca_produc" id="marca_produc" placeholder="Escriba aquí..." required>
                 </div>
 
                 <div class="col-md-4">
                     <h6>Nombre del producto</h6>
-                    <input type="text" class="input-group mb-3 form-control" name="nombre_produc" id="nombre_produc" placeholder="Escriba aqui..." required>
+                    <input type="text" class="input-group mb-3 form-control" name="nombre_produc" id="nombre_produc" placeholder="Escriba aquí..." required>
                 </div>
 
                 <div class="col-md-4">
