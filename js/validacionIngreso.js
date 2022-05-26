@@ -10,7 +10,7 @@ function checkInputs() {
         alert('Solo se permiten letras');
     }
 
-    if(precio < 5000 || precio > 50000){
+    if(precio < 5000 || precio > 100000){
         alert('El precio ingresado no es valido');
         return false;
     }
