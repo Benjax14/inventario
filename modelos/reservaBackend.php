@@ -22,6 +22,8 @@
 
             $stock = $row['stock'];
 
+            if($stock > 0){
+
             $CrearReserva="INSERT INTO reserva (nombre_cliente, num_cliente, fecha_arriendo, id_status) VALUES
             ('".$nombre."', '".$fono."', '".$fecha."', 1);";
 
@@ -41,6 +43,8 @@
                     
             echo '<script language="javascript">alert("Reserva exitosa!");window.location.href="../agendarReserva.php"</script>';
             //header("Location:../agendarReserva.php");
+
+            }
 
         }
 
