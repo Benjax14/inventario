@@ -37,12 +37,12 @@
 
                 <div class="col-md-4">
                     <h6>Marca</h6>
-                    <input class="input-group mb-3 form-control" type="text" name="marca_produc" id="marca_produc" value="<?php echo $marca; ?>" placeholder="Escriba aqui..." required>
+                    <input class="input-group mb-3 form-control" type="text" name="marca_produc" id="marca_produc" value="<?php echo $marca; ?>" placeholder="Escriba aquí..." required>
                 </div>
 
                 <div class="col-md-4">
                     <h6>Nombre del producto</h6>
-                    <input class="input-group mb-3 form-control" type="text" name="nombre_produc" id="nombre_produc" placeholder="Escriba aqui..." value="<?php echo $titulo; ?>" required>
+                    <input class="input-group mb-3 form-control" type="text" name="nombre_produc" id="nombre_produc" placeholder="Escriba aquí..." value="<?php echo $titulo; ?>" required>
                 </div>
 
                 <div class="col-md-4">
@@ -157,6 +157,6 @@
     
     <!--SCRIPTS ÚTILES-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <script src="./js/validacionEdicion.js"></script>
+    <script src="./js/validacionEditar.js"></script>
 </body>
 </html>
