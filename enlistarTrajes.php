@@ -1,4 +1,16 @@
-<body>      
+<body> 
+    
+    <script type="text/javascript">
+        function confirmDelete(){
+           var respuesta = confirm("¿Esta seguro que desea eliminar este producto de la lista?");
+           if(respuesta == true){
+               return true;
+           }
+           else{
+               return false;
+           } 
+        }
+    </script>
 
     <?php require('./header.php'); ?>
     <?php require('./modelos/enlistarTrajesBackend.php'); ?>
@@ -165,7 +177,7 @@
                                                                                   
                         </select>
                             
-                            <button class="btn btn-danger"> <img class="me-2" src="lmnts_grfcs/eliminar.png" width="20" height="20"></button>
+                            <button class="btn btn-danger" onclick="return confirmDelete()"> <img class="me-2" src="lmnts_grfcs/eliminar.png" width="20" height="20"></button>
                             
                         </div>
                          
