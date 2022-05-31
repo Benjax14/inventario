@@ -16,7 +16,7 @@
 
                 <div class="col-md-4">
                     <h6>ID del producto a reservar</h6>
-                    <input class="input-group mb-3 form-control readonly" type="number" name="clave" id="clave" placeholder="Ingrese ID..." required>
+                    <input class="input-group mb-3 form-control" type="number" name="clave" id="clave" placeholder="Ingrese ID..." required>
                 </div>
 
                 <div class="col-md-4">
@@ -24,13 +24,18 @@
                     <input class="input-group mb-3 form-control" type="text" name="nombre_cliente" id="nombre_cliente" placeholder="Escriba aqui..." required>
                 </div>
 
+                <div class="col-md-4">
+                    <h6>Fono del cliente</h6>
+                    <input type="number" name="fono_cliente" id="fono_cliente" class="input-group mb-3 form-control" placeholder="Ingrese fono..." required>
+                </div>
+
             </div>
 
             <div class="row justify-content-center">
 
                 <div class="col-md-4">
-                    <h6>Fono del cliente</h6>
-                    <input type="number" name="fono_cliente" id="fono_cliente" class="input-group mb-3 form-control" placeholder="Ingrese fono..." required>
+                    <h6>Correo electrónico</h6>
+                    <input type="text" name="email" id="email" class="input-group mb-3 form-control" placeholder="Ingrese Email..." required>
                 </div>
 
                 <div class="col-md-4">

@@ -3,16 +3,23 @@ function checkInputs() {
     const id = document.getElementById('clave').value;
     const nombre = document.getElementById('nombre_cliente').value;
     const fono = document.getElementById('fono_cliente').value;
+    const email = document.getElementById('email').value;
     var fecha = document.getElementById('fecha').value;
-    expresionRegular = /^[a-zA-ZÀ-ÿ\s]{1,50}$/
+    expresionRegular = /^[a-zA-ZÀ-ÿ\s]{1,50}$/;
+    correo = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
 
     if(!expresionRegular.test(nombre)){
-        alert('Solo se permiten letras');
+        alert('El nombre no es valido');
         return false;
     }
 
-    if(fono.length < 8 || fono.length > 8){
+    if(fono.length < 8 || fono.length > 8 || fono <= 0){
         alert('El numero de telefono no es valido');
+        return false;
+    }
+
+    if(!correo.test(email)){
+        alert('El correo electrónico no es valido');
         return false;
     }
 
@@ -31,8 +38,9 @@ function checkInputs() {
     }
 
     fecha_actual = f.getFullYear() + "-" + mes + "-" + dia;
+    fecha_limite = f.getFullYear()+1 + "-" + mes + "-" + dia;
 
-    if(fecha <= fecha_actual){
+    if(fecha <= fecha_actual || fecha > fecha_limite){
         alert('La fecha no es valida');
         return false;
     }
