@@ -1,24 +1,12 @@
-<body> 
+<body>
+
+<?php require('./header.php'); ?>
+<?php require_once("./modelos/conexion.php");?>
+
+<a id="top"></a>
+
+<div class="container" style="margin-top: 30px">
     
-    <script type="text/javascript">
-        function confirmDelete(){
-           var respuesta = confirm("¿Esta seguro que desea eliminar este producto de la lista?");
-           if(respuesta == true){
-               return true;
-           }
-           else{
-               return false;
-           } 
-        }
-    </script>
-
-    <?php require('./header.php'); ?>
-    <?php require('./modelos/enlistarTrajesBackend.php'); ?>
-
-    <a id="top"></a>
-
-    <div class="container" style="margin-top: 30px">
-
     <div class="row justify-content-around">
             <div class="col-auto" style="margin-top: 15px"> 
                 <h1><a href="EasterEgg.php"><img height="20" width="20" src="./lmnts_grfcs/pascua.png"></a>-Listado de trajes y accesorios-<a href="EasterEgg.php"><img height="20" width="20" src="./lmnts_grfcs/pascua.png"></a></h1>
@@ -42,42 +30,45 @@
         <table class="table table-striped table-bordered table-responsive">
         
             <tr>
-              <th>ID</th>
-              <th>Marca</th>
-              <th>Título</th>
-              <th>Imagen</th>
-              <th>Stock</th>
-              <th>Precio</th>
-              <th>Color</th>
-              <th>Talla</th>
-              <th>Estado</th>
-              <th>Categoría</th>
-              <th>Acciones</th>
+                <th>ID</th>
+                <th>Marca</th>
+                <th>Título</th>
+                <th>Imagen</th>
+                <th>Stock</th>
+                <th>Precio</th>
+                <th>Color</th>
+                <th>Talla</th>
+                <th>Estado</th>
+                <th>Categoría</th>
+                <th>Acciones</th>
             </tr>
             
             <tr>
-
-            <?php              
-                while($rows = mysqli_fetch_array($pro)){
-                    $id_traje = $rows['id'];
-                    $marca = $rows['marca'];
-                    $titulo = $rows['nombre'];
-                    $imagen = $rows['img'];
-                    $stock = $rows['stock'];
-                    $precio = $rows['precio'];
-                    $id_color = $rows['id_col'];
-                    $id_talla = $rows['id_talla'];
-                    $id_estado = $rows['id_estado'];
-                    $id_cat = $rows['id_cat'];
-            ?>
-
-              <td><?php echo $id_traje;?></td>
-              <td><?php echo $marca;?></td>
-              <td><?php echo $titulo;?></td>
-              <td><a href="verImagen.php?id=<?php echo $id_traje ?>"><img height="80" width="80" src="data:image/*;base64,<?php echo base64_encode($imagen); ?>"></a></td>
-              <td><?php echo $stock;?></td>
-              <td>$<?php echo $precio;?></td>
-              <td>
+            <?php
+            include("./modelos/enlistarTrajesBackend.php");
+            $res = $_POST["palabra"];
+            $buscar = "SELECT * FROM  producto WHERE nombre LIKE '%$res%'";
+            $buscarsql = mysqli_query($con,$buscar);
+                    
+            while($rows = mysqli_fetch_assoc($buscarsql)){
+                $id_traje = $rows['id'];
+                $marca = $rows['marca'];
+                $titulo = $rows['nombre'];
+                $imagen = $rows['img'];
+                $stock = $rows['stock'];
+                $precio = $rows['precio'];
+                $id_color = $rows['id_col'];
+                $id_talla = $rows['id_talla'];
+                $id_estado = $rows['id_estado'];
+                $id_cat = $rows['id_cat'];
+        ?>
+            <td><?php echo $id_traje;?></td>
+            <td><?php echo $marca;?></td>
+            <td><?php echo $titulo;?></td>
+            <td><a href="verImagen.php?id=<?php echo $id_traje ?>"><img height="80" width="80" src="data:image/*;base64,<?php echo base64_encode($imagen); ?>"></a></td>
+            <td><?php echo $stock;?></td>
+            <td>$<?php echo $precio;?></td>
+            <td>
 
                     <?php foreach($consultaCol as $row):?>
                         <?php if($row['id_col'] == $id_color){?>
@@ -85,21 +76,21 @@
                         <?php } ?> 
                     <?php endforeach?>
 
-              </td>
-              <td>
+            </td>
+            <td>
 
-                 <?php foreach($consultaTal as $row):?>
+            <?php foreach($consultaTal as $row):?>
                     <?php if($row['id_talla'] == $id_talla){?>
                         <?php echo $row['nom_talla'];?>
                     <?php } ?> 
-                 <?php endforeach?>
+            <?php endforeach?>
 
-              </td>
-              <td>
+            </td>
+            <td>
 
-                  <?php foreach($consultaEst as $row):?>
+                <?php foreach($consultaEst as $row):?>
 
-                      <?php if($row['id_estado'] == $id_estado){?>
+                    <?php if($row['id_estado'] == $id_estado){?>
 
                         <?php if($id_estado == 1){?>
                         <img src="lmnts_grfcs/verde.png" width="20" height="20">
@@ -113,20 +104,19 @@
 
                     <?php } ?>
 
-                  <?php endforeach?>
+                <?php endforeach?>
 
-              </td>
+            </td>
+            <td>
 
-              <td>
+                <?php foreach($consultaCat as $row):?>
+                    <?php if($row['id_cat'] == $id_cat){?>
+                        <?php echo $row['nom_cat'];?>
+                    <?php } ?> 
+                <?php endforeach?>
 
-                  <?php foreach($consultaCat as $row):?>
-                      <?php if($row['id_cat'] == $id_cat){?>
-                          <?php echo $row['nom_cat'];?>
-                      <?php } ?> 
-                  <?php endforeach?>
-
-              </td>
-              <td>
+            </td>
+            <td>
         
                 <div class="col-1 justify-content-center align-self-center">
                     <form action="./editarProducto.php" method="POST">
@@ -186,9 +176,7 @@
                         <div>
                             
                         <select class="mostrarnt" name="prod" required>
-                                                       
                             <option selected value="<?php echo $id_traje; ?>"></option>
-                                                                                  
                         </select>
                             
                             <button class="btn btn-danger" onclick="return confirmDelete()"> <img class="me-2" src="lmnts_grfcs/eliminar.png" width="20" height="20"></button>
@@ -200,25 +188,14 @@
             
               </td>
             </tr>
-              
-            <?php } ?>
+    <?php } ?>
+    </table>
 
-        </table>
-
-        <div class="d-flex justify-content-end">
+    <div class="d-flex justify-content-end">
         <a href="#top">
             <img width="30" height="30" src="./lmnts_grfcs/up-arrow.png" >
         </a>
-        </div>
-
     </div>
-    
 
-
-    
-    <!--SCRIPTS ÚTILES-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>                 
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-     
 </body>
-</html>
+<html>
