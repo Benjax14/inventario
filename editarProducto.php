@@ -12,7 +12,7 @@
         $precio = $_POST['pre'];
         $id_color = $_POST['col'];
         $id_talla = $_POST['tal'];
-        $id_estado = $_POST['est'];
+        //$id_estado = $_POST['est'];
         $id_cat = $_POST['cat'];
    
     ?>
@@ -102,28 +102,7 @@
             </div>
             
             <div class="row justify-content-center">
-
-                <div class="col-md-4">
-                    <h6>Estado del producto</h6>
-                    <select name="select" id="estado" class="form-select" value="<?php echo $id_estado; ?>" >
-                        <option>-Seleccione estado-</option>
-                        <?php foreach($consultaEst as $row):?>
-
-                        <?php
-                            $est = $row['id_estado'];
-                            $no_est = $row['nom_estado'];    
-                        ?>
-
-                        <?php if($est == $id_estado){?>
-                            <option value="<?php echo $est?>" selected> <?php echo $no_est; ?></option>
-                        <?php }else{ ?>
-                            <option value="<?php echo $est?>"> <?php echo $no_est; ?></option>
-                        <?php } ?>
-
-                        <?php endforeach ?>
-                    </select>       
-                </div>
-
+                
                 <div class="col-md-4">
                     <h6>Color del producto</h6>
                     <select name="select_color" id="color" class="form-select" value="<?php echo $id_color; ?>" >
