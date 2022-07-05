@@ -8,6 +8,7 @@ function checkInputs() {
 
     if(!expresionRegular.test(marca) || !expresionRegular.test(nombre)){
         alert('Solo se permiten letras');
+        return false;
     }
 
     if(precio < 5000 || precio > 100000){

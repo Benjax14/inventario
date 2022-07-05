@@ -1,6 +1,6 @@
 <body>
-    
-    <script type="text/javascript">
+
+<script type="text/javascript">
         function confirmDelete(){
            var respuesta = confirm("¿Esta seguro que desea eliminar este producto de la lista?");
            if(respuesta == true){
@@ -12,10 +12,11 @@
         }
     </script>
 
-    <?php require('./header.php'); ?>
-    <?php require('./modelos/enlistarTrajesBackend.php'); ?>
-    
-    <div class="container mt-5">
+
+<?php require('./header.php'); ?>
+<?php require_once("./modelos/conexion.php");?>
+
+<div class="container mt-5">
 
     <a id="top"></a>
 
@@ -63,8 +64,14 @@
                         
                         <tr>
 
-                        <?php              
-                            while($rows = mysqli_fetch_array($pro)){
+                        <?php   
+                        
+                        include("./modelos/enlistarTrajesBackend.php");
+                        $res = $_POST["palabra"];
+                        $buscar = "SELECT * FROM  producto WHERE nombre LIKE '%$res%'";
+                        $buscarsql = mysqli_query($con,$buscar);
+
+                            while($rows = mysqli_fetch_array($buscarsql)){
                                 $id_traje = $rows['id'];
                                 $marca = $rows['marca'];
                                 $titulo = $rows['nombre'];
@@ -216,5 +223,5 @@
         </div>    
 
     </div>              
-     
 </body>
+<html>
