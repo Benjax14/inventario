@@ -1,5 +1,18 @@
 <body>
 
+<script type="text/javascript">
+        function confirmDelete(){
+           var respuesta = confirm("¿Esta seguro que desea eliminar este producto de la lista?");
+           if(respuesta == true){
+               return true;
+           }
+           else{
+               return false;
+           } 
+        }
+    </script>
+
+
 <?php require('./header.php'); ?>
 <?php require_once("./modelos/conexion.php");?>
 
