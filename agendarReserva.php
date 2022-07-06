@@ -21,12 +21,12 @@
 
                 <div class="col-md-4">
                     <h6>Nombre del cliente</h6>
-                    <input class="input-group mb-3 form-control" type="text" name="nombre_cliente" id="nombre_cliente" placeholder="Escriba aqui..." required>
+                    <input class="input-group mb-3 form-control" type="text" name="nombre_cliente" id="nombre_cliente" placeholder="Juanito Pérez" required>
                 </div>
 
                 <div class="col-md-4">
                     <h6>Fono del cliente</h6>
-                    <input type="number" name="fono_cliente" id="fono_cliente" class="input-group mb-3 form-control" placeholder="Ingrese fono..." required>
+                    <input type="number" name="fono_cliente" id="fono_cliente" class="input-group mb-3 form-control" placeholder="+569-XXXXXXXX" required>
                 </div>
 
             </div>
@@ -35,7 +35,7 @@
 
                 <div class="col-md-4">
                     <h6>Correo electrónico</h6>
-                    <input type="text" name="email" id="email" class="input-group mb-3 form-control" placeholder="Ingrese Email..." required>
+                    <input type="text" name="email" id="email" class="input-group mb-3 form-control" placeholder="email@example.com" required>
                 </div>
 
                 <div class="col-md-4">
@@ -56,8 +56,6 @@
     </div>  
 
     <!--SCRIPTS ÚTILES-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="./js/validacionReserva.js"></script>
 
 </body>
-</html>

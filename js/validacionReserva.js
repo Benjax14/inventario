@@ -13,6 +13,11 @@ function checkInputs() {
         return false;
     }
 
+    if(nombre.length > 20){
+        alert('El nombre es demasiado largo');
+        return false;
+    }
+
     if(fono.length < 8 || fono.length > 8 || fono <= 0){
         alert('El numero de telefono no es valido');
         return false;

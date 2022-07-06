@@ -1,15 +1,9 @@
 <?php
 
-    include_once("conexion.php");
+    require_once("conexion.php");
 
     $ConsultaProduc = "SELECT * FROM producto";
     $ConsultaPro = mysqli_query($con, $ConsultaProduc);
-    
-?>
-
-<?php
-
-    include_once("conexion.php");
 
     $id = mysqli_real_escape_string ($con, $_POST["clave"]);
     $nombre = mysqli_real_escape_string ($con, $_POST["nombre_cliente"]);
@@ -43,16 +37,16 @@
             unset($_POST["email"]);
             unset($_POST["fecha"]);
                     
-            echo '<script language="javascript">alert("Reserva exitosa!");window.location.href="../agendarReserva.php"</script>';
-            //header("Location:../agendarReserva.php");
+            echo '<script language="javascript">alert("La reserva se ha guardado exitosamente");window.location.href="../agendarReserva.php"</script>';
 
+            }else{
+                echo '<script language="javascript">alert("El producto a reservar no esta disponible");window.location.href="../agendarReserva.php"</script>';
             }
 
+        }else{
+            echo '<script language="javascript">alert("El producto a reservar no existe");window.location.href="../agendarReserva.php"</script>';
         }
 
     }
-
-    echo '<script language="javascript">alert("Hubo un error");window.location.href="../agendarReserva.php"</script>';
-    //header("Location:../agendarReserva.php");
     
 ?>

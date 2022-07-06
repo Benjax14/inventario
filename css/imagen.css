@@ -1,5 +1,5 @@
 nav{
-    background-image: url(../lmnts_grfcs/header3.jpg);
+    background-image: url(/inventario/lmnts_grfcs/header3.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -9,27 +9,23 @@ nav{
 }
 
 body{
-    background-image: url(../lmnts_grfcs/fondo4.jpg);
+    background-image: url(/inventario/lmnts_grfcs/fondo4.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
-    margin: 0px;
-    padding: 0px;
-    height: 40%;
-    width: 100%;
 }
 
-table{
-    background-image: url(../lmnts_grfcs/fondo5.jpg);
+table,.card{
+    background-image: url(/inventario/lmnts_grfcs/fondo5.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
-    margin: 0px;
-    padding: 0px;
-    height: 40%;
-    width: 100%;
+}
+
+.resp-table{
+    overflow-x: auto;
 }
 
 .container{
