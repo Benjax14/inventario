@@ -203,18 +203,17 @@
 
                     </table>
 
-                        <div class="d-flex justify-content-end">
-                        <a href="#top">
-                            <img width="30" height="30" src="./lmnts_grfcs/up-arrow.png" >
-                        </a>
-                        </div>
-
                 </div>
 
             </div>
             
         </div>    
 
-    </div>              
-     
+    </div>
+        <div class="d-flex justify-content-end">
+            <a href="#top">
+                <img width="30" height="30" src="./lmnts_grfcs/up-arrow.png" >
+            </a>
+        </div>        
+
 </body>
