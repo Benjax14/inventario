@@ -19,34 +19,32 @@
 
             if($stock > 0){
 
-            $CrearReserva="INSERT INTO reserva (nombre_cliente, num_cliente, email, fecha_arriendo, id_status) VALUES
-            ('".$nombre."', '".$fono."', '".$correo."', '".$fecha."', 1);";
+                $CrearReserva="INSERT INTO reserva (nombre_cliente, num_cliente, email, fecha_arriendo, id_status) VALUES
+                ('".$nombre."', '".$fono."', '".$correo."', '".$fecha."', 1);";
 
-            $CrearReservaSQL="INSERT INTO se_puede (id) VALUES
-            ('".$id."');";
+                $CrearReservaSQL="INSERT INTO se_puede (id) VALUES
+                ('".$id."');";
 
-            $stoc = "UPDATE producto set stock='".$stock."'-1 WHERE id='".$id."'";
+                $stoc = "UPDATE producto set stock='".$stock."'-1 WHERE id='".$id."'";
 
-            mysqli_query($con, $stoc);
-            mysqli_query($con, $CrearReserva);
-            mysqli_query($con, $CrearReservaSQL);    
+                mysqli_query($con, $stoc);
+                mysqli_query($con, $CrearReserva);
+                mysqli_query($con, $CrearReservaSQL);    
 
-            unset($_POST["clave"]);
-            unset($_POST["nombre_cliente"]);
-            unset($_POST["fono_cliente"]);
-            unset($_POST["email"]);
-            unset($_POST["fecha"]);
-                    
-            echo '<script language="javascript">alert("La reserva se ha guardado exitosamente");window.location.href="../agendarReserva.php"</script>';
+                unset($_POST["clave"]);
+                unset($_POST["nombre_cliente"]);
+                unset($_POST["fono_cliente"]);
+                unset($_POST["email"]);
+                unset($_POST["fecha"]);
+                        
+                echo '<script language="javascript">alert("La reserva se ha guardado exitosamente");window.location.href="../agendarReserva.php"</script>';
 
-            }else{
-                echo '<script language="javascript">alert("El producto a reservar no esta disponible");window.location.href="../agendarReserva.php"</script>';
             }
 
-        }else{
-            echo '<script language="javascript">alert("El producto a reservar no existe");window.location.href="../agendarReserva.php"</script>';
         }
-
+        
     }
+
+    echo '<script language="javascript">alert("El producto a reservar no esta disponible");window.location.href="../agendarReserva.php"</script>';
     
 ?>
