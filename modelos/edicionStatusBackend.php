@@ -11,7 +11,7 @@
 
         unset($_POST["select_status"]);
 
-        echo '<script language="javascript">alert("Actualizacion realizada correctamente");window.location.href="../verReserva.php"</script>';
+        echo '<script language="javascript">alert("Actualizacion realizada correctamente");window.location.href="../VerReserva.php"</script>';
         //header("Location:../index.php");
          
     }
