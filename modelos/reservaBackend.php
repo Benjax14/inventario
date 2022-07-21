@@ -8,6 +8,7 @@
     $id = mysqli_real_escape_string ($con, $_POST["clave"]);
     $nombre = mysqli_real_escape_string ($con, $_POST["nombre_cliente"]);
     $fono = mysqli_real_escape_string ($con, $_POST["fono_cliente"]);
+    $rut = mysqli_real_escape_string ($con, $_POST["rut"]);
     $correo = mysqli_real_escape_string ($con, $_POST["email"]);       
     $fecha = mysqli_real_escape_string ($con, $_POST["fecha"]);
     
@@ -19,8 +20,8 @@
 
             if($stock > 0){
 
-                $CrearReserva="INSERT INTO reserva (nombre_cliente, num_cliente, email, fecha_arriendo, id_status) VALUES
-                ('".$nombre."', '".$fono."', '".$correo."', '".$fecha."', 1);";
+                $CrearReserva="INSERT INTO reserva (nombre_cliente, rut, num_cliente, email, fecha_arriendo, id_status) VALUES
+                ('".$nombre."', '".$rut."', '".$fono."', '".$correo."', '".$fecha."', 1);";
 
                 $CrearReservaSQL="INSERT INTO se_puede (id) VALUES
                 ('".$id."');";
@@ -33,6 +34,7 @@
 
                 unset($_POST["clave"]);
                 unset($_POST["nombre_cliente"]);
+                unset($_POST["rut"]);
                 unset($_POST["fono_cliente"]);
                 unset($_POST["email"]);
                 unset($_POST["fecha"]);

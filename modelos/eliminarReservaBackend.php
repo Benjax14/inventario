@@ -2,7 +2,7 @@
 
     require_once("conexion.php");
         
-    $res = mysqli_real_escape_string ($con, $_POST['res']);
+    $res = mysqli_real_escape_string ($con, $_GET["res"]);
 
     $deleteReserva = "DELETE FROM se_puede WHERE id_reserva = '".$res."' ";
     mysqli_query($con, $deleteReserva);

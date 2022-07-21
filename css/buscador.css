@@ -11,7 +11,7 @@ input.src{
     transition: all .5s;
 }
 input.src:hover{
-    width: 250px;
+    width: 330px;
     background-color: #fff;
     border-color: #8c10b3;
     box-shadow: 0 0 5px #6dcff680;

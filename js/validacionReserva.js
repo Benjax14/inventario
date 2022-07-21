@@ -1,15 +1,21 @@
 function checkInputs() {
     
-    const id = document.getElementById('clave').value;
+    const id = document.getElementById('controlBuscador').value;
     const nombre = document.getElementById('nombre_cliente').value;
+    const rut = document.getElementById('rut').value;
     const fono = document.getElementById('fono_cliente').value;
     const email = document.getElementById('email').value;
     var fecha = document.getElementById('fecha').value;
     expresionRegular = /^[a-zA-ZÀ-ÿ\s]{1,50}$/;
     correo = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
 
+    if(id === "-Seleccione el producto-"){
+        alert('Porfavor seleccione un producto a reservar');
+        return false;
+    }
+
     if(!expresionRegular.test(nombre)){
-        alert('El nombre no es valido');
+        alert('El nombre no es válido');
         return false;
     }
 
@@ -18,13 +24,18 @@ function checkInputs() {
         return false;
     }
 
+    if(rut < 50000000 || rut > 300000000){
+        alert('El rut no es válido');
+        return false;
+    }
+
     if(fono.length < 8 || fono.length > 8 || fono <= 0){
-        alert('El numero de telefono no es valido');
+        alert('El numero de telefono no es válido');
         return false;
     }
 
     if(!correo.test(email)){
-        alert('El correo electrónico no es valido');
+        alert('El correo electrónico no es válido');
         return false;
     }
 
@@ -46,7 +57,7 @@ function checkInputs() {
     fecha_limite = f.getFullYear()+1 + "-" + mes + "-" + dia;
 
     if(fecha <= fecha_actual || fecha > fecha_limite){
-        alert('La fecha no es valida');
+        alert('La fecha no es válida');
         return false;
     }
     
