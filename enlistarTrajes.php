@@ -29,10 +29,10 @@
                 </div>
 
                 <div class="col-auto" style="margin-top: 22px">
-                <form action="buscadorEnlistar.php" method="POST">
+                <form action="buscadorEnlistar.php" method="POST" onsubmit="return buscador();">
                 <div class="input-group">
                     <div class="form-outline">
-                        <input type="search" class="form-control" name="palabra">
+                        <input type="search" class="form-control" id="pal" name="palabra">
                     </div>
                     <button type="submit" class="btn btn-light">
                         <img height="20" width="20" src="./lmnts_grfcs/search.png">
@@ -215,5 +215,6 @@
                 <img width="30" height="30" src="./lmnts_grfcs/up-arrow.png" >
             </a>
         </div>        
+        <script src="./js/validacionBuscador.js"></script>
 
 </body>
