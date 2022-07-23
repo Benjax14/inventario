@@ -1,7 +1,5 @@
 <body>
 
-    <link rel="stylesheet" href="./css/buscador.css">
-
     <?php include("./header.php"); ?>
     <?php require("./modelos/conexion.php"); ?>
 
@@ -15,17 +13,7 @@
                     <h1>Listado de reservas activas</h1>
                 </div>
 
-                <div class="buscar">
-
-                    <form action="./busquedaReservas.php" method="POST">
-
-                        <input type="text" name="busqueda" class="src" placeholder="Escriba aqui para buscar un cliente">
-                
-                    </form>
-
-                </div>
-
-                <hr>
+                    <hr>
                     
                     <div class="resp-table">
 
@@ -49,11 +37,12 @@
 
                                     <?php
 
-                                        if(!empty($_POST['busqueda'])){
+                                        if(!empty($_POST['f1']) && !empty($_POST['f2'])){
                                                 
-                                            $busqueda = mysqli_real_escape_string ($con, $_POST['busqueda']);
+                                            $f1 = mysqli_real_escape_string ($con, $_POST['f1']);
+                                            $f2 = mysqli_real_escape_string ($con, $_POST['f2']);
 
-                                            $consultaBusqueda = "SELECT *, DATE_FORMAT(fecha_arriendo, '%d-%m-%Y') AS fecha_retiro FROM reserva WHERE nombre_cliente LIKE '%$busqueda%'";
+                                            $consultaBusqueda = "SELECT *, DATE_FORMAT(fecha_arriendo, '%d-%m-%Y') AS fecha_retiro FROM reserva WHERE fecha_arriendo BETWEEN '$f1' AND '$f2'";
                                             $consulta = mysqli_query($con, $consultaBusqueda);
 
                                             $producto = "SELECT * FROM producto, se_puede WHERE producto.id = se_puede.id";
@@ -234,8 +223,8 @@
 
                                 <!---->
 
-                                <?php } } ?>                          
-
+                                <?php } } ?>
+                            
                         </table>
 
                     </div>
