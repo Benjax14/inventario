@@ -67,7 +67,7 @@
                         <?php   
                         
                         include("./modelos/enlistarTrajesBackend.php");
-                        $res = $_POST["palabra"];
+                        $res = mysqli_real_escape_string($con, strip_tags($_POST["palabra"]));
                         $buscar = "SELECT * FROM producto WHERE nombre LIKE '%$res%' OR marca LIKE '%$res'";
                         $buscarsql = mysqli_query($con,$buscar);
 

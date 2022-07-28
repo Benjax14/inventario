@@ -3,15 +3,15 @@
     
     if(!empty($_POST)) {
         
-        $id = mysqli_real_escape_string ($con, $_POST["clave"]);
-        $marca_produc = mysqli_real_escape_string ($con, $_POST["marca_produc"]);
-        $nombre_produc = mysqli_real_escape_string ($con, $_POST["nombre_produc"]);
-        $talla = mysqli_real_escape_string ($con, $_POST["select_talla"]);
-        $precio = mysqli_real_escape_string ($con, $_POST["precio"]);
-        $stock = mysqli_real_escape_string ($con, $_POST["stock"]);
-        $color = mysqli_real_escape_string ($con, $_POST["select_color"]);
-        $categoria = mysqli_real_escape_string ($con, $_POST["select_cat"]);
-        $estado = mysqli_real_escape_string ($con, $_POST["select"]);
+        $id = mysqli_real_escape_string ($con, strip_tags($_POST["clave"]));
+        $marca_produc = mysqli_real_escape_string ($con, strip_tags($_POST["marca_produc"]));
+        $nombre_produc = mysqli_real_escape_string ($con, strip_tags($_POST["nombre_produc"]));
+        $talla = mysqli_real_escape_string ($con, strip_tags($_POST["select_talla"]));
+        $precio = mysqli_real_escape_string ($con, strip_tags($_POST["precio"]));
+        $stock = mysqli_real_escape_string ($con, strip_tags($_POST["stock"]));
+        $color = mysqli_real_escape_string ($con, strip_tags($_POST["select_color"]));
+        $categoria = mysqli_real_escape_string ($con, strip_tags($_POST["select_cat"]));
+        $estado = mysqli_real_escape_string ($con, strip_tags($_POST["select"]));
 
         $consultaEditar = "UPDATE producto set marca='".$marca_produc."', nombre='".$nombre_produc."', id_estado='".$estado."', precio='".$precio."', id_col='".$color."', stock='".$stock."', id_talla='".$talla."', id_cat='".$categoria."' WHERE id='".$id."'";
         mysqli_query($con, $consultaEditar);
