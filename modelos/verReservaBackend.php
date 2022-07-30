@@ -2,7 +2,7 @@
 
 require_once("conexion.php");
 
-$consultaPuede = "SELECT * FROM se_puede";
+$consultaPuede = "SELECT * FROM se_puede ORDER BY id_reserva DESC";
 $consultaPue = mysqli_query($con, $consultaPuede);
 
 $consultaReserva = "SELECT *, DATE_FORMAT(fecha_arriendo, '%d-%m-%Y') AS fecha_retiro FROM reserva";
