@@ -8,9 +8,15 @@ function checkInputs() {
     var fecha = document.getElementById('fecha').value;
     expresionRegular = /^[a-zA-ZÀ-ÿ\s]{1,50}$/;
     correo = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
-
+    expresionNum = /^[0-9]+$/
+    
     if(id === "-Seleccione el producto-"){
         alert('Por favor seleccione un producto a reservar');
+        return false;
+    }
+
+    if(nombre === '' || rut === '' || fono === '' || email === '' || fecha === ''){
+        alert('Porfavor llene el espacio vacio para continuar');
         return false;
     }
 
@@ -24,8 +30,23 @@ function checkInputs() {
         return false;
     }
 
-    if(rut < 50000000 || rut > 300000000){
+    if(nombre.length <= 4){
+        alert('El nombre es demasiado corto');
+        return false;
+    }
+
+    if(!expresionNum.test(rut)){
+        alert('Solo se permiten numeros en el rut');
+        return false;
+    }
+
+    if(rut < 50000000 || rut > 250000000){
         alert('El rut no es válido');
+        return false;
+    }
+
+    if(!expresionNum.test(fono)){
+        alert('Solo se permiten numeros en el fono');
         return false;
     }
 

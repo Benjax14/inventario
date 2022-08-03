@@ -39,8 +39,8 @@
 
                                         if(!empty($_POST['f1']) && !empty($_POST['f2'])){
                                                 
-                                            $f1 = mysqli_real_escape_string ($con, $_POST['f1']);
-                                            $f2 = mysqli_real_escape_string ($con, $_POST['f2']);
+                                            $f1 = mysqli_real_escape_string ($con, strip_tags($_POST['f1']));
+                                            $f2 = mysqli_real_escape_string ($con, strip_tags($_POST['f2']));
 
                                             $consultaBusqueda = "SELECT *, DATE_FORMAT(fecha_arriendo, '%d-%m-%Y') AS fecha_retiro FROM reserva WHERE fecha_arriendo BETWEEN '$f1' AND '$f2'";
                                             $consulta = mysqli_query($con, $consultaBusqueda);

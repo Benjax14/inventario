@@ -12,6 +12,12 @@
                     <h1>Reservación</h1>
                 </div>
             </div>
+
+            <div class="row justify-content-center">
+                <div class="col-auto"> 
+                    <h6>Solo se permiten realizar dos reservas por cliente</h6>
+                </div>
+            </div>
             
             <hr>
         
@@ -24,7 +30,9 @@
                         <select name="clave" id="controlBuscador" style="width: 100%">
                             <option>-Seleccione el producto-</option>
                             <?php while($rows = mysqli_fetch_array($pro)){?>
+                                <?php if($rows['stock'] > 0 ){ ?>
                                 <option value="<?php echo $rows[0];?>">
+                                    *
                                     <?php echo $rows[1];?>
                                     -
                                     <?php echo $rows[2];?>
@@ -55,6 +63,41 @@
                                         endforeach   
                                     ?>
                                 </option>
+                                <?php }else{ ?>
+                                    <option disabled>
+                                    *    
+                                    <?php echo $rows[1];?>
+                                    -
+                                    <?php echo $rows[2];?>
+                                    -
+                                    $<?php echo $rows[5];?>
+                                    -
+                                    <?php
+                                        foreach($consultaCol as $row):
+                                            if($rows['id_col'] == $row['id_col']){ 
+                                                echo $row['nom_col'];
+                                            }
+                                        endforeach   
+                                    ?>
+                                    -
+                                    <?php
+                                        foreach($consultaTal as $row):
+                                            if($rows['id_talla'] == $row['id_talla']){ 
+                                                echo $row['nom_talla'];
+                                            }
+                                        endforeach   
+                                    ?>
+                                    -
+                                    <?php
+                                        foreach($consultaCat as $row):
+                                            if($rows['id_cat'] == $row['id_cat']){ 
+                                                echo $row['nom_cat'];
+                                            }
+                                        endforeach   
+                                    ?>
+                                    - No disponible
+                                </option>
+                                <?php } ?>    
                             <?php } ?>
                         </select>
                     </section>
