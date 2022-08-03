@@ -21,7 +21,7 @@
         $ver_nombre = mysqli_query($con, "SELECT * from producto where nombre ='$nombre_produc'");
         
         if(mysqli_num_rows($ver_nombre) > 0){
-            echo '<script language="javascript">alert("Nombre ya ingresado, modifiquelo"); window.location.href="../ingresarProducto.php"</script>';
+            echo '<script language="javascript">alert("Nombre ya ingresado, modifíquelo"); window.location.href="../ingresarProducto.php"</script>';
             exit();
         }
     

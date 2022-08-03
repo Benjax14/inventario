@@ -16,7 +16,7 @@ function checkInputs() {
     }
 
     if(stock <= 0 || stock > 50){
-        alert('El stock ingresado no es valido');
+        alert('El stock ingresado no es válido');
         return false;
     }
     

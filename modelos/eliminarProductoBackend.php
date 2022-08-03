@@ -22,7 +22,7 @@
     $eliminar = "DELETE FROM producto WHERE id = '".$id."' ";
     mysqli_query($con, $eliminar);
 
-    echo '<script language="javascript">alert("Producto eliminado!");window.location.href="../index.php"</script>';
+    echo '<script language="javascript">alert("¡Producto eliminado!");window.location.href="../index.php"</script>';
     //header("location:../index.php");
 
 

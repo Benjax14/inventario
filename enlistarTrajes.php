@@ -2,7 +2,7 @@
     
     <script type="text/javascript">
         function confirmDelete(){
-           var respuesta = confirm("¿Esta seguro que desea eliminar este producto de la lista?");
+           var respuesta = confirm("¿Estás seguro que desea eliminar este producto de la lista?");
            if(respuesta == true){
                return true;
            }

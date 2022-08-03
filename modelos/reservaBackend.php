@@ -47,6 +47,6 @@
         
     }
 
-    echo '<script language="javascript">alert("El producto a reservar no esta disponible");window.location.href="../agendarReserva.php"</script>';
+    echo '<script language="javascript">alert("El producto para reservar no está disponible");window.location.href="../agendarReserva.php"</script>';
     
 ?>

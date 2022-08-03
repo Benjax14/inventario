@@ -10,7 +10,7 @@ function checkInputs() {
     correo = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
 
     if(id === "-Seleccione el producto-"){
-        alert('Porfavor seleccione un producto a reservar');
+        alert('Por favor seleccione un producto a reservar');
         return false;
     }
 
@@ -30,7 +30,7 @@ function checkInputs() {
     }
 
     if(fono.length < 8 || fono.length > 8 || fono <= 0){
-        alert('El numero de telefono no es válido');
+        alert('El número de teléfono no es válido');
         return false;
     }
 

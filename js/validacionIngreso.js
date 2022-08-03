@@ -12,12 +12,12 @@ function checkInputs() {
     }
 
     if(precio < 5000 || precio > 100000){
-        alert('El precio ingresado no es valido');
+        alert('El precio ingresado no es válido');
         return false;
     }
 
     if(stock <= 0 || stock > 50){
-        alert('El stock ingresado no es valido');
+        alert('El stock ingresado no es válido');
         return false;
     }
     

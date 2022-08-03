@@ -12,7 +12,7 @@ function checkInputs() {
     expresionRegular = /^[a-zA-ZÀ-ÿ0-9\s]{1,}$/
 
     if(marca === '' || titulo === ''){
-        alert('No puede tener espacios vacios');
+        alert('No puede tener espacios vacíos');
         return false;
     }
     if(precio < 5000){
@@ -20,14 +20,14 @@ function checkInputs() {
         return false;
     }
     if(stock < 0){
-        alert('No puede tener 0 elementos');
+        alert('Stock Inválido');
         return false;
     }
     if(talla === "-Seleccione una talla-"){
         alert('Seleccione una talla');
         return false;
     }
-    if(categoria === "-Seleccione la categoria-"){
+    if(categoria === "-Seleccione la categoría-"){
         alert('Seleccione una categoria')
         return false;
     }
@@ -40,7 +40,7 @@ function checkInputs() {
         return false;
     }
     if(!expresionRegular.test(marca) || !expresionRegular.test(titulo)){
-        alert("Solo admite letras y números")
+        alert("Solo se admite letras y números")
         return false;
     }
     
