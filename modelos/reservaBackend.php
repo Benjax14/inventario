@@ -138,7 +138,7 @@
             
         }elseif(mysqli_num_rows($validacion2) >= 1){
 
-            echo '<script language="javascript">alert("Ha ocurrido un error!, Algún dato que quiere ingresar corresponde a otro usuario"); window.location.href="../agendarReserva.php"</script>';
+            echo '<script language="javascript">alert("¡Ha ocurrido un error!, Algún dato que quiere ingresar corresponde a otro usuario"); window.location.href="../agendarReserva.php"</script>';
     
         }
            
