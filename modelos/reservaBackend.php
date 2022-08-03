@@ -58,7 +58,7 @@
             echo '<script language="javascript">alert("La reserva se ha guardado exitosamente");window.location.href="../agendarReserva.php"</script>';
 
         }elseif(mysqli_num_rows($validacion1) > 1) {
-            echo '<script language="javascript">alert("Ha ocurrido un error!, ya hay dos reservas registradas con estos datos"); window.location.href="../agendarReserva.php"</script>';
+            echo '<script language="javascript">alert("¡Ha ocurrido un error!, ya hay dos reservas registradas con estos datos"); window.location.href="../agendarReserva.php"</script>';
         }
         
         //Validación de si la tabla de la reserva esta vacia
