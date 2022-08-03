@@ -20,15 +20,15 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light header-color container-bg">
             <div class="container-fluid">
-                <a class="navbar-brand texto-bar" href="./index.php"><img width="13%" height="13%" src="../inventario/lmnts_grfcs/queso.png">Panel administrativo</a>
+                <a style="color: #ffffff" class="navbar-brand texto-bar" href="./index.php"><img width="13%" height="13%" src="../inventario/lmnts_grfcs/queso.png">Panel administrativo</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-                        <a class="nav-link texto-bar" href="ingresarProducto.php">Ingresar un producto al sistema</a>
-                        <a class="nav-link texto-bar" href="agendarReserva.php">Hacer una reserva</a>
-                        <a class="nav-link texto-bar" href="VerReserva.php">Ver reservas</a>
+                        <a class="nav-link texto-bar" style="color: #ffffff" href="ingresarProducto.php">Ingresar un producto al sistema</a>
+                        <a class="nav-link texto-bar" style="color: #ffffff" href="agendarReserva.php">Hacer una reserva</a>
+                        <a class="nav-link texto-bar" style="color: #ffffff" href="VerReserva.php">Ver reservas</a>
                         <!--<a class="nav-link texto-bar" href="">Resumen de reservas</a>-->
                     </div>
                 </div>

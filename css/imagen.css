@@ -1,5 +1,6 @@
 nav{
-    background-image: url(/inventario/lmnts_grfcs/header3.jpg);
+    background-image: url(/inventario/lmnts_grfcs/azul.jpg);
+    background-color: white;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -8,9 +9,9 @@ nav{
     padding: 0px;
 }
 
+
 body{
     /*background-image: url(/inventario/lmnts_grfcs/fondo4.jpg);*/
-    background-color: #ffdfd3;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
