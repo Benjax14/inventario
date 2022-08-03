@@ -30,12 +30,17 @@ function checkInputs() {
         return false;
     }
 
+    if(nombre.length <= 4){
+        alert('El nombre es demasiado corto');
+        return false;
+    }
+
     if(!expresionNum.test(rut)){
         alert('Solo se permiten numeros en el rut');
         return false;
     }
 
-    if(rut < 50000000 || rut > 300000000){
+    if(rut < 50000000 || rut > 250000000){
         alert('El rut no es válido');
         return false;
     }

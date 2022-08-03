@@ -5,7 +5,7 @@
     <?php include("./header.php"); ?>
     <?php require("./modelos/conexion.php"); ?>
 
-    <div class="container mt-5">    
+    <div class="container mt-5">
 
         <div class="row justify-content-center">
 
@@ -51,7 +51,7 @@
 
                                         if(!empty($_POST['busqueda'])){
                                                 
-                                            $busqueda = mysqli_real_escape_string ($con, $_POST['busqueda']);
+                                            $busqueda = mysqli_real_escape_string ($con, strip_tags($_POST['busqueda']));
 
                                             $consultaBusqueda = "SELECT *, DATE_FORMAT(fecha_arriendo, '%d-%m-%Y') AS fecha_retiro FROM reserva WHERE nombre_cliente LIKE '%$busqueda%'";
                                             $consulta = mysqli_query($con, $consultaBusqueda);

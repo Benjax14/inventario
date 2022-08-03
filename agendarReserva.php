@@ -12,6 +12,12 @@
                     <h1>Reservación</h1>
                 </div>
             </div>
+
+            <div class="row justify-content-center">
+                <div class="col-auto"> 
+                    <h6>Solo se permiten realizar dos reservas por cliente</h6>
+                </div>
+            </div>
             
             <hr>
         
