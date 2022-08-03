@@ -121,7 +121,7 @@
 
                 <div class="col-md-4">
                     <h6>Fono del cliente</h6>
-                    <label>Solo los 8 digitos después del +569</label>
+                    <label>Solo los 8 dígitos después del +569</label>
                     <input type="number" name="fono_cliente" id="fono_cliente" class="input-group mb-3 form-control" placeholder="Ej: +569-XXXXXXXX" required>
                 </div>
 

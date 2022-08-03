@@ -80,7 +80,7 @@
                 </div>
 
                 <div class="col-md-4">
-                    <h6>Categoria</h6>
+                    <h6>Categoría</h6>
                     <select name="select_cat" id="cat" class="form-select" value="<?php echo $id_cat; ?>" >
                         <option>-Seleccione la categoria-</option>
                         <?php foreach($consultaCat as $row):?>

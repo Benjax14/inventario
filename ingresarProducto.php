@@ -51,7 +51,7 @@
                 </div>
 
                 <div class="col-md-4">
-                    <h6>Categoria</h6>
+                    <h6>Categoría</h6>
                     <select name="select" class="form-select" required>
                         <option>-Seleccione la categoria-</option>
                         <option value="1">Traje</option>
