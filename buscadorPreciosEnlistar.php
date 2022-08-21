@@ -34,11 +34,11 @@
 
                 <div class="buscar">
 
-                    <form action="./buscadorEnlistar.php" method="POST" onsubmit="return buscador();">
+                <form action="./buscadorEnlistar.php" method="POST" onsubmit="return buscador();">
 
-                        <input type="text" name="palabra" id="pal" class="src" placeholder="Escriba aquí el producto a buscar">
+                    <input type="text" name="palabra" id="pal" class="src" placeholder="Escriba aquí el producto a buscar">
 
-                    </form>
+                </form>
 
                 </div>
                     <h6>Buscar por rango de precios</h6>
@@ -81,10 +81,13 @@
 
                         <?php   
                         
+                        if(!empty($_POST['max']) && !empty($_POST['min'])){
+
                         include("./modelos/enlistarTrajesBackend.php");
-                        $res = mysqli_real_escape_string($con, strip_tags($_POST["palabra"]));
-                        $buscar = "SELECT * FROM producto WHERE nombre LIKE '%$res%' OR marca LIKE '%$res%'";
-                        $buscarsql = mysqli_query($con,$buscar);
+                        $maximo = mysqli_real_escape_string($con, strip_tags($_POST["max"]));
+                        $minimo = mysqli_real_escape_string($con, strip_tags($_POST["min"]));
+                        $buscarPrecios = "SELECT * FROM producto WHERE precio BETWEEN '$minimo' AND '$maximo'";
+                        $buscarsql = mysqli_query($con, $buscarPrecios);
 
                             while($rows = mysqli_fetch_array($buscarsql)){
                                 $id_traje = $rows['id'];
@@ -96,6 +99,7 @@
                                 $id_color = $rows['id_col'];
                                 $id_talla = $rows['id_talla'];
                                 $id_cat = $rows['id_cat'];
+
                         ?>
 
                         <td><?php echo $id_traje;?></td>
@@ -222,9 +226,10 @@
                         </tr>
 
                         <?php 
-                        }
+                        }}
                         ?>
                         
+
 
                     </table>
 

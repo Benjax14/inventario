@@ -1,4 +1,7 @@
 <body>
+
+<link rel="stylesheet" href="./css/buscador.css">
+
     
     <script type="text/javascript">
         function confirmDelete(){
@@ -19,7 +22,6 @@
 
     <a id="top"></a>
 
-
         <div class="row justify-content-center">
 
             <div class="col-md-12 mt-3">
@@ -28,17 +30,43 @@
                     <h2>Listado de trajes/vestidos y accesorios</h2>
                 </div>
 
-                <div class="col-auto" style="margin-top: 22px">
+                <div class="buscar">
+
+                    <form action="./buscadorEnlistar.php" method="POST" onsubmit="return buscador();">
+
+                        <input type="text" name="palabra" id="pal" class="src" placeholder="Escriba aquí el producto a buscar">
+
+                    </form>
+
+                </div>
+
+                <!--<div class="col-auto" style="margin-top: 22px">
                 <form action="buscadorEnlistar.php" method="POST" onsubmit="return buscador();">
                 <div class="input-group">
                     <div class="form-outline">
-                        <input type="search" class="form-control" id="pal" name="palabra">
+                        <input type="search" class="form-control" id="pal" name="palabra" placeholder="Ingrese aquí su busqueda">
                     </div>
                     <button type="submit" class="btn btn-light">
                         <img height="20" width="20" src="./lmnts_grfcs/search.png">
                     </button>
                 </div>
+                
                 </form>
+                -->
+                    <h6>Buscar por rango de precios</h6>
+
+                    <form action="buscadorPreciosEnlistar.php" method="POST">
+                        <div class="input-group">
+                                <span class="input-group-text">$</span>
+                                <input type="number" name="max" placeholder="Ej: 15000">
+                                <span class="input-group-text">-</span>
+                                <input type="number" name="min" placeholder="Ej: 30000">
+                                    <button type="submit" class="btn btn-light">
+                                        <img height="20" width="20" src="./lmnts_grfcs/search.png">
+                                    </button>
+                        </div>
+                            
+                    </form>
                 </div>
 
                 <hr>
