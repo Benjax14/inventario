@@ -79,7 +79,15 @@
                         <option value="5">Gris</option>
                     </select>      
                 </div>
-
+                <div class="col-md-4">
+                    <h6>Género</h6>
+                    <select name="select_gen" class="form-select" required>
+                        <option>-Seleccione el género-</option>
+                        <option value="1">Masculino</option>
+                        <option value="2">Femenino</option>
+                        <option value="3">Unisex</option>
+                    </select>      
+                </div>
             </div>
             
             <div class="row justify-content-center">

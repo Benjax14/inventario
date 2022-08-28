@@ -15,9 +15,10 @@
         $color = mysqli_real_escape_string ($con, strip_tags($_POST["select_color"]));
         $stock = mysqli_real_escape_string ($con, strip_tags($_POST["stock"]));
         $categoria = mysqli_real_escape_string ($con, strip_tags($_POST["select"]));
+        $genero = mysqli_real_escape_string ($con, strip_tags($_POST["select_gen"]));
 
-        $CrearproductoSql="INSERT INTO producto (marca, nombre, id_talla, precio, id_col, stock, id_cat, img, id_estado) VALUES
-        ('".$marca_produc."','".$nombre_produc."','".$talla."','".$precio."','".$color."','".$stock."','".$categoria."','".$imagen."', 1);";
+        $CrearproductoSql="INSERT INTO producto (marca, nombre, id_talla,id_gen ,precio , id_col, stock, id_cat, img, id_estado) VALUES
+        ('".$marca_produc."','".$nombre_produc."','".$talla."','".$genero."','".$precio."','".$color."','".$stock."','".$categoria."','".$imagen."', 1);";
         $ver_nombre = mysqli_query($con, "SELECT * from producto where nombre ='$nombre_produc'");
         
         if(mysqli_num_rows($ver_nombre) > 0){
@@ -34,6 +35,7 @@
         unset($_POST['select_color']);
         unset($_POST["stock"]);
         unset($_POST["select"]);
+        unset($_POST["select_gen"]);
         
         header("Location:../ingresarProducto.php");
 

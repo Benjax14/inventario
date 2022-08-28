@@ -1,11 +1,8 @@
 <body>
 
-<link rel="stylesheet" href="./css/buscador.css">
-
-    
-    <script type="text/javascript">
+<script type="text/javascript">
         function confirmDelete(){
-           var respuesta = confirm("¿Estás seguro que desea eliminar este producto de la lista?");
+           var respuesta = confirm("¿Esta seguro que desea eliminar este producto de la lista?");
            if(respuesta == true){
                return true;
            }
@@ -15,12 +12,14 @@
         }
     </script>
 
-    <?php require('./header.php'); ?>
-    <?php require('./modelos/enlistarTrajesBackend.php'); ?>
-    
-    <div class="container mt-5">
+
+<?php require('./header.php'); ?>
+<?php require_once("./modelos/conexion.php");?>
+
+<div class="container mt-5">
 
     <a id="top"></a>
+
 
         <div class="row justify-content-center">
 
@@ -39,28 +38,14 @@
                     </form>
 
                 </div>
-
-                <!--<div class="col-auto" style="margin-top: 22px">
-                <form action="buscadorEnlistar.php" method="POST" onsubmit="return buscador();">
-                <div class="input-group">
-                    <div class="form-outline">
-                        <input type="search" class="form-control" id="pal" name="palabra" placeholder="Ingrese aquí su busqueda">
-                    </div>
-                    <button type="submit" class="btn btn-light">
-                        <img height="20" width="20" src="./lmnts_grfcs/search.png">
-                    </button>
-                </div>
-                
-                </form>
-                -->
                     <h6>Buscar por rango de precios</h6>
 
                     <form action="buscadorPreciosEnlistar.php" method="POST">
                         <div class="input-group">
                                 <span class="input-group-text">$</span>
-                                <input type="number" name="min" placeholder="Ej: 15000">
+                                <input type="number" name="max" placeholder="Ej: 15000">
                                 <span class="input-group-text">-</span>
-                                <input type="number" name="max" placeholder="Ej: 30000">
+                                <input type="number" name="min" placeholder="Ej: 30000">
                                     <button type="submit" class="btn btn-light">
                                         <img height="20" width="20" src="./lmnts_grfcs/search.png">
                                     </button>
@@ -68,13 +53,13 @@
                             
                     </form>
                     <form action="filtroEnlistar.php" method="POST" onsubmit="return filtro();">
-                <select class="col-auto" style="margin-top: 1px; padding: 6px" id="cat" name="categoria" >
+                <select class="col-auto" style="margin-top: 1px; padding: 6px"name="categoria" >
                         <option selected>---Seleccione Categoria---</option>
                         <option value="1">Traje</option>
                         <option value="2">Vestido</option>
                         <option value="3">Accesorio</option>
                 </select>
-                <select class="custom-select" style="margin:1px; padding: 6px" id="col" name="color" >
+                <select class="custom-select" style="margin:1px; padding: 6px"name="color" >
                         <option value="0">---Seleccione Color---</option>
                         <option value="1">Negro</option>
                         <option value="2">Blanco</option>
@@ -82,7 +67,7 @@
                         <option value="4">Azul</option>
                         <option value="5">Gris</option>
                 </select>
-                <select class="custom-select" style="margin:1px; padding: 6px"id="tal" name="Talla" >
+                <select class="custom-select" style="margin:1px; padding: 6px"name="Talla" >
                         <option value="0">---Seleccione Talla---</option>
                         <option value="1">S</option>
                         <option value="2">M</option>
@@ -90,7 +75,7 @@
                         <option value="4">XL</option>
                         <option value="5">XXL</option>
                 </select>
-                <select class="custom-select" style="margin:1px; padding: 6px" id="gen" name="Genero" >
+                <select class="custom-select" style="margin:1px; padding: 6px"name="Genero" >
                         <option value="0">---Seleccione Genero---</option>
                         <option value="1">Masculino</option>
                         <option value="2">Femenino</option>
@@ -111,7 +96,7 @@
                         <tr>
                         <th>ID</th>
                         <th>Marca</th>
-                        <th>Título</th>
+                        <th>Titulo</th>
                         <th>Imagen</th>
                         <th>Stock</th>
                         <th>Precio</th>
@@ -119,14 +104,27 @@
                         <th>Talla</th>
                         <th>Género</th>
                         <th>Estado</th>
-                        <th>Categoría</th>
+                        <th>Categoria</th>
                         <th>Acciones</th>
                         </tr>
                         
                         <tr>
 
-                        <?php              
-                            while($rows = mysqli_fetch_array($pro)){
+                        <?php   
+                        
+                        include("./modelos/enlistarTrajesBackend.php");
+
+
+
+                        $cat = mysqli_real_escape_string($con, strip_tags($_POST["categoria"]));
+                        $col = mysqli_real_escape_string($con, strip_tags($_POST["color"]));
+                        $tal = mysqli_real_escape_string($con, strip_tags($_POST["Talla"]));
+                        $gen = mysqli_real_escape_string($con, strip_tags($_POST["Genero"]));
+                        
+                        $buscar = "SELECT * FROM producto WHERE id_cat LIKE '%$cat%' OR id_col LIKE '%$col%' OR id_talla LIKE '%$tal%' OR id_gen LIKE '%$gen%'";
+                        $buscarsql = mysqli_query($con,$buscar);
+
+                            while($rows = mysqli_fetch_array($buscarsql)){
                                 $id_traje = $rows['id'];
                                 $marca = $rows['marca'];
                                 $titulo = $rows['nombre'];
@@ -163,17 +161,6 @@
                             <?php endforeach?>
 
                         </td>
-
-                        <td>
-
-                            <?php foreach($consultaGen as $row):?>
-                                <?php if($row['id_gen'] == $id_gen){?>
-                                    <?php echo $row['nom_gen'];?>
-                                <?php } ?> 
-                            <?php endforeach?>
-
-                        </td>
-
                         <td>
 
                                 <?php if($stock >= 10){?>
@@ -240,10 +227,6 @@
                                         <option selected value="<?php echo $id_talla; ?>"></option>                                                                                  
                                     </select>
 
-                                    <select class="mostrarnt" name="gen" required>                               
-                                        <option selected value="<?php echo $id_gen; ?>"></option>                                                                                  
-                                    </select>
-
                                     <select class="mostrarnt" name="cat" required>                               
                                         <option selected value="<?php echo $id_cat; ?>"></option>                                                                                  
                                     </select>
@@ -287,12 +270,14 @@
             
         </div>    
 
-    </div>
-        <div class="d-flex justify-content-end">
-            <a href="#top">
-                <img width="30" height="30" src="./lmnts_grfcs/up-arrow.png" >
-            </a>
-        </div>        
-        <script src="./js/validacionBuscador.js"></script>
-
+    </div>      
+    
+            <div class="d-flex justify-content-end">
+                <a href="#top">
+                    <img width="30" height="30" src="./lmnts_grfcs/up-arrow.png" >
+                </a>
+            </div>
+    <script src="./js/validacionBuscador.js"></script>
+    <script src="./js/validacionFiltro.js"></script>
 </body>
+<html>
