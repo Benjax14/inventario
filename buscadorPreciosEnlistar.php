@@ -264,5 +264,6 @@
                 </a>
             </div>
     <script src="./js/validacionBuscador.js"></script>
+    <script src="./js/validacionFiltro.js"></script>
 </body>
 <html>
