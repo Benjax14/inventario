@@ -14,6 +14,9 @@ $consultaCat = mysqli_query($con, $consultaCategoria);
 $consultaColor = "SELECT * FROM colores";
 $consultaCol = mysqli_query($con, $consultaColor);
 
+$consultaGenero = "SELECT * FROM genero";
+$consultaGen = mysqli_query($con, $consultaGenero);
+
 $produc = "SELECT * FROM producto";
 $pro = mysqli_query($con, $produc);
 

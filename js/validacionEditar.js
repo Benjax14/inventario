@@ -6,6 +6,7 @@ function checkInputs() {
     const stock = document.getElementById('stock').value; 
     const talla = document.getElementById("talla").value;
     const categoria = document.getElementById("cat").value;
+    const genero = document.getElementById("genero").value;
     const estado = document.getElementById("estado").value;
     const color = document.getElementById("color").value;
     
@@ -41,6 +42,10 @@ function checkInputs() {
     }
     if(!expresionRegular.test(marca) || !expresionRegular.test(titulo)){
         alert("Solo se admite letras y números")
+        return false;
+    }
+    if(genero === "-Seleccione género-"){
+        alert('Seleccione un género');
         return false;
     }
     

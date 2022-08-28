@@ -10,6 +10,7 @@
         $imagen = $_POST['ima'];
         $stock = $_POST['sto'];
         $precio = $_POST['pre'];
+        $id_gen = $_POST['gen'];
         $id_color = $_POST['col'];
         $id_talla = $_POST['tal'];
         //$id_estado = $_POST['est'];
@@ -123,6 +124,28 @@
                         <?php endforeach ?>
                     </select>       
                 </div>
+                
+                <div class="col-md-4">
+                    <h6>Género</h6>
+                    <select name="select_gen" id="genero" class="form-select" value="<?php echo $id_gen; ?>" >
+                        <option>-Seleccione género-</option>
+                        <?php foreach($consultaGen as $row):?>
+
+                        <?php
+                            $genero = $row['id_gen'];
+                            $nom_genero = $row['nom_gen'];    
+                        ?>
+
+                        <?php if($genero == $id_gen){?>
+                            <option value="<?php echo $genero?>" selected> <?php echo $nom_genero; ?></option>
+                        <?php }else{ ?>
+                            <option value="<?php echo $genero?>"> <?php echo $nom_genero; ?></option>
+                        <?php } ?>
+
+                        <?php endforeach ?>
+                    </select>       
+                </div>
+                
 
             </div>
             

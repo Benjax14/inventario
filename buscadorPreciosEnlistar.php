@@ -46,9 +46,9 @@
                     <form action="buscadorPreciosEnlistar.php" method="POST">
                         <div class="input-group">
                         <span class="input-group-text">$</span>
-                                <input type="number" name="max" placeholder="Ej: 15000">
+                                <input type="number" name="min" placeholder="Ej: 15000">
                                 <span class="input-group-text">-</span>
-                                <input type="number" name="min" placeholder="Ej: 30000">
+                                <input type="number" name="max" placeholder="Ej: 30000">
                                     <button type="submit" class="btn btn-light">
                                         <img height="20" width="20" src="./lmnts_grfcs/search.png">
                                     </button>
@@ -72,6 +72,7 @@
                         <th>Precio</th>
                         <th>Color</th>
                         <th>Talla</th>
+                        <th>Género</th>
                         <th>Estado</th>
                         <th>Categoría</th>
                         <th>Acciones</th>
@@ -97,6 +98,7 @@
                                 $stock = $rows['stock'];
                                 $precio = $rows['precio'];
                                 $id_color = $rows['id_col'];
+                                $id_gen = $rows['id_gen'];
                                 $id_talla = $rows['id_talla'];
                                 $id_cat = $rows['id_cat'];
 
@@ -126,6 +128,17 @@
                             <?php endforeach?>
 
                         </td>
+
+                        <td>
+
+                            <?php foreach($consultaGen as $row):?>
+                            <?php if($row['id_gen'] == $id_gen){?>
+                                <?php echo $row['nom_gen'];?>
+                            <?php } ?> 
+                            <?php endforeach?>
+
+                            </td>   
+
                         <td>
 
                                 <?php if($stock >= 10){?>
@@ -190,6 +203,10 @@
 
                                     <select class="mostrarnt" name="tal" required>                               
                                         <option selected value="<?php echo $id_talla; ?>"></option>                                                                                  
+                                    </select>
+
+                                    <select class="mostrarnt" name="gen" required>                               
+                                        <option selected value="<?php echo $id_gen; ?>"></option>                                                                                  
                                     </select>
 
                                     <select class="mostrarnt" name="cat" required>                               
