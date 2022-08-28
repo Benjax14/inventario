@@ -127,7 +127,7 @@
                 
                 <div class="col-md-4">
                     <h6>Género</h6>
-                    <select name="select_gen" id="genero" class="form-select" value="<?php echo $id_gen; ?>" >
+                    <select name="select_gen" id="genx" class="form-select" value="<?php echo $id_gen; ?>" >
                         <option>-Seleccione género-</option>
                         <?php foreach($consultaGen as $row):?>
 
