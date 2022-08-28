@@ -1,15 +1,16 @@
 function checkInputs() {
     //En proceso...
+
     const marca = document.getElementById('marca_produc').value;
     const titulo = document.getElementById('nombre_produc').value;
     const precio = document.getElementById('precio').value;
     const stock = document.getElementById('stock').value; 
     const talla = document.getElementById("talla").value;
     const categoria = document.getElementById("cat").value;
-    const genero = document.getElementById("genero").value;
-    const estado = document.getElementById("estado").value;
+    const genero = document.getElementById("genx").value;
     const color = document.getElementById("color").value;
     
+
     expresionRegular = /^[a-zA-ZÀ-ÿ0-9\s]{1,}$/
 
     if(marca === '' || titulo === ''){
@@ -32,10 +33,6 @@ function checkInputs() {
         alert('Seleccione una categoria')
         return false;
     }
-    if(estado === "-Seleccione estado-"){
-        alert('Seleccione un estado');
-        return false;
-    }
     if(color === "-Seleccione color-"){
         alert('Seleccione un color');
         return false;
@@ -48,5 +45,6 @@ function checkInputs() {
         alert('Seleccione un género');
         return false;
     }
+
     
 }
