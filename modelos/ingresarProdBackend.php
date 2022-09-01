@@ -16,8 +16,8 @@
         $stock = mysqli_real_escape_string ($con, strip_tags($_POST["stock"]));
         $categoria = mysqli_real_escape_string ($con, strip_tags($_POST["select"]));
         $genero = mysqli_real_escape_string ($con, strip_tags($_POST["select_gen"]));
-        $tam_imagen = $_FILES['imagen']['size'];
-        $tip_imagen = $_FILES['imagen']['type'];
+        $tam_imagen = addslashes(file_get_contents($_FILES['imagen']['size']));
+        $tip_imagen = addslashes(file_get_contents($_FILES['imagen']['type']));
 
         //validacion datos imagen
         if($tam_imagen>1000000){
