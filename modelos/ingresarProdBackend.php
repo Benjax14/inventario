@@ -29,7 +29,7 @@
         //validacion datos imagen
         if($tam_imagen>1000000 || $tip_imagen!="image/jpg" || $tip_imagen!="image/jpeg" || $tip_imagen!="image/png"){
             echo '<script language="javascript">alert("archivo no permitido para subir"); window.location.href="../ingresarProducto.php"</script>';
-            exit();
+            
         }else{            
         $CrearproductoSql="INSERT INTO producto (marca, nombre, id_talla,id_gen ,precio , id_col, stock, id_cat, img) VALUES
         ('".$marca_produc."','".$nombre_produc."','".$talla."','".$genero."','".$precio."','".$color."','".$stock."','".$categoria."','".$imagen."');";
