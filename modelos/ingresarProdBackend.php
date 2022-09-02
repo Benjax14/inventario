@@ -20,16 +20,11 @@
         $tip_imagen = $_FILES['imagen']['type'];
 
         //validacion datos imagen
-        if($tam_imagen>1000000){
-            echo '<script language="javascript">alert("archivo de imagen demasiado pesado"); window.location.href="../ingresarProducto.php"</script>';
+        if($tam_imagen>1000000 || $tip_imagen!="image/jpg" || $tip_imagen!="image/jpeg" || $tip_imagen!="image/png"){
+            echo '<script language="javascript">alert("archivo no permitido para subir"); window.location.href="../ingresarProducto.php"</script>';
             exit();
-
-        }else{
-            if($tip_imagen!="image/jpg" || $tip_imagen!="image/jpeg" || $tip_imagen!="image/png"){
-                echo '<script language="javascript">alert("solo se permite fotos con formato: jpg/jpeg/png"); window.location.href="../ingresarProducto.php"</script>';
-                exit();
         }
-        }
+        
         $CrearproductoSql="INSERT INTO producto (marca, nombre, id_talla,id_gen ,precio , id_col, stock, id_cat, img) VALUES
         ('".$marca_produc."','".$nombre_produc."','".$talla."','".$genero."','".$precio."','".$color."','".$stock."','".$categoria."','".$imagen."');";
         $ver_nombre = mysqli_query($con, "SELECT * from producto where nombre ='$nombre_produc'");
