@@ -15,8 +15,28 @@ function checkInputs() {
         return false;
     }
 
-    if(nombre === '' || rut === '' || fono === '' || email === '' || fecha === ''){
-        alert('Porfavor llene el espacio vacio para continuar');
+    if(nombre === ''){
+        alert('Por favor llene el espacio vacio del nombre para continuar');
+        return false;
+    }
+
+    if(rut === ''){
+        alert('Por favor llene el espacio vacio del rut para continuar');
+        return false;
+    }
+
+    if(fono === ''){
+        alert('Por favor llene el espacio vacio del fono para continuar');
+        return false;
+    }
+
+    if(email === ''){
+        alert('Por favor llene el espacio vacio del email para continuar');
+        return false;
+    }
+
+    if(fecha === ''){
+        alert('Por favor llene el espacio vacio de la fecha para continuar');
         return false;
     }
 
@@ -51,7 +71,7 @@ function checkInputs() {
     }
 
     if(fono.length < 8 || fono.length > 8 || fono <= 0){
-        alert('El número de teléfono no es válido');
+        alert('El numero de telefono no es válido');
         return false;
     }
 

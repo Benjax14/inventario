@@ -19,7 +19,7 @@
 
                     <form action="./busquedaReservas.php" method="POST">
 
-                        <input type="text" name="busqueda" class="src" placeholder="Escriba aqui para buscar un cliente">
+                        <input type="text" name="busqueda" class="src" placeholder="Escriba aquí para buscar un cliente">
                 
                     </form>
 
@@ -36,6 +36,7 @@
                                     <th>Marca</th>
                                     <th>Imagen</th>
                                     <th>Título</th>
+                                    <th>Talla</th>
                                     <th>Nombre del cliente</th>
                                     <th>Rut del cliente</th>
                                     <th>Número del cliente</th>
@@ -53,14 +54,19 @@
                                                 
                                             $busqueda = mysqli_real_escape_string ($con, strip_tags($_POST['busqueda']));
 
-                                            $consultaBusqueda = "SELECT *, DATE_FORMAT(fecha_arriendo, '%d-%m-%Y') AS fecha_retiro FROM reserva WHERE nombre_cliente LIKE '%$busqueda%'";
+                                            $consultaBusqueda = "SELECT *, DATE_FORMAT(fecha_arriendo, '%d-%m-%Y') AS fecha_retiro FROM reserva WHERE nombre_cliente LIKE '%$busqueda%' OR rut LIKE '%$busqueda%' OR num_cliente LIKE '%$busqueda%' OR email LIKE '%$busqueda%'";
                                             $consulta = mysqli_query($con, $consultaBusqueda);
 
                                             $producto = "SELECT * FROM producto, se_puede WHERE producto.id = se_puede.id";
                                             $pro = mysqli_query($con, $producto);
 
+                                            $talla = "SELECT * FROM tallas, producto WHERE tallas.id_talla = producto.id_talla";
+                                            $tal = mysqli_query($con, $talla);
+
                                             $status = "SELECT * FROM status";
                                             $sta = mysqli_query($con, $status);
+
+                                            $fech = date('Y-m-d');
 
                                             function formateo_rut($rut_param){
 
@@ -117,6 +123,16 @@
                                     </td>
 
                                     <td>
+                                        <?php 
+                                            foreach($tal as $row): 
+                                                if($row['id'] == $row['id']){    
+                                                    echo $row['nom_talla'];
+                                                }    
+                                            endforeach 
+                                        ?>
+                                    </td>
+
+                                    <td>
                                         <?php echo $nombre; ?>
                                     </td>
 
@@ -141,23 +157,29 @@
                                             <?php if($row['id_status'] == $status){ ?> 
                                                 <?php $status = $row['nom_status']; ?>
 
-                                                <?php if($row['id_status'] == 2){ ?>
-                                                    <img src="lmnts_grfcs/verde.png" width="20" height="20">
-                                                    <br> 
-                                                    <?php echo $status; ?>
-                                                <?php } ?>
+                                                <?php if($fech > $rows['fecha_arriendo'] && $row['id_status'] == 1){?>
 
-                                                <?php if($row['id_status'] == 1){ ?>
-                                                    <img src="lmnts_grfcs/amarillo.png" width="20" height="20">
-                                                    <br> 
-                                                    <?php echo $status; ?>
-                                                <?php } ?>
+                                                    <img src="lmnts_grfcs/rojo.png" width="20" height="20"> 
+                                                    Expirado
 
-                                                <?php if($row['id_status'] == 3){ ?>
-                                                    <img src="lmnts_grfcs/rojo.png" width="20" height="20">
-                                                    <br>
-                                                    <?php echo $status; ?>
-                                                <?php } ?>
+                                                <?php }else{ ?>
+
+                                                    <?php if($row['id_status'] == 2){ ?>
+                                                        <img src="lmnts_grfcs/verde.png" width="20" height="20"> 
+                                                        <?php echo $status; ?>
+                                                    <?php } ?>
+
+                                                    <?php if($row['id_status'] == 1){ ?>
+                                                        <img src="lmnts_grfcs/amarillo.png" width="20" height="20"> 
+                                                        <?php echo $status; ?>
+                                                    <?php } ?>
+
+                                                    <?php if($row['id_status'] == 3){ ?>
+                                                        <img src="lmnts_grfcs/rojo.png" width="20" height="20"> 
+                                                        <?php echo $status; ?>
+                                                    <?php } ?>
+
+                                                <?php }?>
 
                                             <?php } ?>   
                                         <?php endforeach ?>
@@ -189,12 +211,12 @@
                                             <div class="modal-body">
                                                 <form method="POST" action="./modelos/edicionStatusBackend.php?id_res=<?php echo $reserva; ?>">
                                                 <div>
-                                                    <h6>Seleccione el estado</h6>
+                                                    <h6>Seleccione el nuevo estado</h6>
                                                         <select name="select_status" id="select_status" class="form-select">
 
                                                             <option value="1">En espera</option>
                                                             <option value="2">Confirmada</option>
-                                                            <option value="3">Cancelada</option>
+                                                            <!--<option value="3">Cancelada</option>-->
        
                                                         </select>       
                                                 </div>

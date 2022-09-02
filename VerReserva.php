@@ -17,7 +17,7 @@
 
                     <form action="./busquedaReservas.php" method="POST">
 
-                        <input type="text" name="busqueda" class="src" placeholder="Escriba aqui para buscar un cliente">
+                        <input type="text" name="busqueda" class="src" placeholder="Escriba aquí para buscar un cliente">
                 
                     </form>
 
@@ -29,7 +29,7 @@
                     <form action="./fechasReservas.php" method="POST">
                         <input type="date" name="f1" required>
                         <input type="date" name="f2" required>
-                        <button>Buscar</button>
+                        <button><img src="./lmnts_grfcs/search-icon.png" width="23" height="23"></button>
                     </form>
                 </div>        
 
@@ -44,6 +44,7 @@
                                     <th>Imagen</th>
                                     <th>Marca</th>
                                     <th>Título</th>
+                                    <th>Talla</th>
                                     <th>Nombre del cliente</th>
                                     <th>Rut del cliente</th>
                                     <th>Número del cliente</th>
@@ -57,6 +58,8 @@
 
                                     <?php
 
+                                        $fech = date('Y-m-d');
+
                                         function formateo_rut($rut_param){
 
                                             $parte1 = substr($rut_param, 0, 2);
@@ -67,8 +70,6 @@
                                             return $parte1.".".$parte2.".".$parte3."-".$parte4;
                                             
                                         }
-
-                                        $date = date("Y-m-d");
 
                                         while($rows = mysqli_fetch_array($consultaPue)){
                                             $reserva = $rows['id_reserva'];
@@ -109,6 +110,16 @@
                                             foreach($pro as $row):
                                                 if($row['id'] == $producto){
                                                     echo $row['nombre'];
+                                                }
+                                            endforeach    
+                                        ?>
+                                    </td>
+
+                                    <td>
+                                        <?php
+                                            foreach($pro as $row):
+                                                if($row['id'] == $producto){
+                                                    echo $row['nom_talla'];
                                                 }
                                             endforeach    
                                         ?>
@@ -171,23 +182,30 @@
                                                 <?php if($row['id_reserva'] == $reserva){ ?> 
                                                     <?php $status = $row['nom_status']; ?>
 
-                                                    <?php if($row['id_status'] == 2){ ?>
-                                                        <img src="lmnts_grfcs/verde.png" width="20" height="20"> 
-                                                        <br>
-                                                        <?php echo $status; ?>
-                                                    <?php } ?>
+                                                    <?php if($fech > $row['fecha_arriendo'] && $row['id_status'] == 1){?>
 
-                                                    <?php if($row['id_status'] == 1){ ?>
-                                                        <img src="lmnts_grfcs/amarillo.png" width="20" height="20"> 
-                                                        <br>
-                                                        <?php echo $status; ?>
-                                                    <?php } ?>
-
-                                                    <?php if($row['id_status'] == 3){ ?>
                                                         <img src="lmnts_grfcs/rojo.png" width="20" height="20"> 
-                                                        <br>
-                                                        <?php echo $status; ?>
-                                                    <?php } ?>
+                                                        Expirado
+
+                                                    <?php }else{ ?>
+
+                                                        <?php if($row['id_status'] == 2){ ?>
+                                                            <img src="lmnts_grfcs/verde.png" width="20" height="20"> 
+                                                            <?php echo $status; ?>
+                                                        <?php } ?>
+
+                                                        <?php if($row['id_status'] == 1){ ?>
+                                                            <img src="lmnts_grfcs/amarillo.png" width="20" height="20"> 
+                                                            <?php echo $status; ?>
+                                                        <?php } ?>
+
+                                                        <?php if($row['id_status'] == 3){ ?>
+                                                            <img src="lmnts_grfcs/rojo.png" width="20" height="20"> 
+                                                            <?php echo $status; ?>
+                                                        <?php } ?>
+
+                                                    <?php }?>
+
                                                 <?php } ?>    
                                         <?php endforeach ?>
                                     </td>
@@ -220,12 +238,12 @@
                                             <div class="modal-body">
                                                 <form method="POST" action="./modelos/edicionStatusBackend.php?id_res=<?php echo $reserva; ?>">
                                                 <div>
-                                                    <h6>Seleccione el estado</h6>
+                                                    <h6>Seleccione el nuevo estado</h6>
                                                         <select name="select_status" id="select_status" class="form-select">
 
                                                             <option value="1">En espera</option>
                                                             <option value="2">Confirmada</option>
-                                                            <option value="3">Cancelada</option>
+                                                            <!--<option value="3">Cancelada</option>-->
        
                                                         </select>       
                                                 </div>
