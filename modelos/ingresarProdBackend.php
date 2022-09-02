@@ -19,7 +19,6 @@
         $tam_imagen = $_FILES['imagen']['size'];
         $tip_imagen = $_FILES['imagen']['type'];
 
-        
 
         $CrearproductoSql="INSERT INTO producto (marca, nombre, id_talla,id_gen ,precio , id_col, stock, id_cat, img) VALUES
         ('".$marca_produc."','".$nombre_produc."','".$talla."','".$genero."','".$precio."','".$color."','".$stock."','".$categoria."','".$imagen."');";
