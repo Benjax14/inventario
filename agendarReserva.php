@@ -56,6 +56,14 @@
                                     ?>
                                     -
                                     <?php
+                                        foreach($consultaGen as $row):
+                                            if($rows['id_gen'] == $row['id_gen']){ 
+                                                echo $row['nom_gen'];
+                                            }
+                                        endforeach   
+                                    ?>
+                                    -
+                                    <?php
                                         foreach($consultaCat as $row):
                                             if($rows['id_cat'] == $row['id_cat']){ 
                                                 echo $row['nom_cat'];
@@ -89,6 +97,14 @@
                                     ?>
                                     -
                                     <?php
+                                        foreach($consultaGen as $row):
+                                            if($rows['id_gen'] == $row['id_gen']){ 
+                                                echo $row['nom_gen'];
+                                            }
+                                        endforeach   
+                                    ?>
+                                    -
+                                    <?php
                                         foreach($consultaCat as $row):
                                             if($rows['id_cat'] == $row['id_cat']){ 
                                                 echo $row['nom_cat'];
@@ -106,13 +122,13 @@
                 <div class="col-md-4">
                     <h6>Nombre del cliente</h6>
                     <label>Solo primer nombre y apellido</label>
-                    <input class="input-group mb-3 form-control" type="text" name="nombre_cliente" id="nombre_cliente" placeholder="Ej: Juanito Pérez" required>
+                    <input class="input-group mb-3 form-control" type="text" name="nombre_cliente" id="nombre_cliente" placeholder="Ej: Juanito Pérez">
                 </div>
 
                 <div class="col-md-4">
                     <h6>Rut del cliente (Sin puntos ni guión)</h6>
                     <label>Si el rut termina en K reemplazarla con un 1</label>
-                    <input type="number" name="rut" id="rut" class="input-group mb-3 form-control" placeholder="Ej: 201563458" required>
+                    <input type="number" name="rut" id="rut" class="input-group mb-3 form-control" placeholder="Ej: 201563458">
                 </div>
 
             </div>
@@ -121,20 +137,20 @@
 
                 <div class="col-md-4">
                     <h6>Fono del cliente</h6>
-                    <label>Solo los 8 dígitos después del +569</label>
-                    <input type="number" name="fono_cliente" id="fono_cliente" class="input-group mb-3 form-control" placeholder="Ej: +569-XXXXXXXX" required>
+                    <label>Solo los 8 digitos después del +569</label>
+                    <input type="number" name="fono_cliente" id="fono_cliente" class="input-group mb-3 form-control" placeholder="Ej: +569-XXXXXXXX">
                 </div>
 
                 <div class="col-md-4">
                     <h6>Correo electrónico</h6>
                     <label>Ingrese correo personal</label>
-                    <input type="text" name="email" id="email" class="input-group mb-3 form-control" placeholder="email@example.com" required>
+                    <input type="text" name="email" id="email" class="input-group mb-3 form-control" placeholder="email@example.com">
                 </div>
 
                 <div class="col-md-4">
                     <h6>Fecha de retiro</h6>
                     <label>Fecha donde el cliente vendrá por el traje</label>
-                    <input type="date" name="fecha" id="fecha" class="input-group mb-3 form-control" placeholder="Seleccione fecha..." required>
+                    <input type="date" name="fecha" id="fecha" class="input-group mb-3 form-control" placeholder="Seleccione fecha...">
                 </div>
 
                 <div class="col-sm-12 d-flex justify-content-center">
