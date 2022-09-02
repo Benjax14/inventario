@@ -25,7 +25,7 @@
             exit();
 
         }else{
-            if($tip_imagen!="image/jpg" && $tip_imagen!="image/jpeg" && $tip_imagen!="image/png"){
+            if($tip_imagen!="image/jpg" || $tip_imagen!="image/jpeg" || $tip_imagen!="image/png"){
                 echo '<script language="javascript">alert("solo se permite fotos con formato: jpg/jpeg/png"); window.location.href="../ingresarProducto.php"</script>';
                 exit();
         }
