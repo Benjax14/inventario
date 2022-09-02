@@ -24,7 +24,7 @@
             echo '<script language="javascript">alert("archivo no permitido para subir"); window.location.href="../ingresarProducto.php"</script>';
             exit();
         }
-        
+
         $CrearproductoSql="INSERT INTO producto (marca, nombre, id_talla,id_gen ,precio , id_col, stock, id_cat, img) VALUES
         ('".$marca_produc."','".$nombre_produc."','".$talla."','".$genero."','".$precio."','".$color."','".$stock."','".$categoria."','".$imagen."');";
         $ver_nombre = mysqli_query($con, "SELECT * from producto where nombre ='$nombre_produc'");
@@ -45,7 +45,7 @@
         unset($_POST["select"]);
         unset($_POST["select_gen"]);
         
-        header("Location:../ingresarProducto.php");
+        echo '<script language="javascript">alert("Datos Ingresados Correctamente"); window.location.href="../ingresarProducto.php"</script>';
 
     }
     
