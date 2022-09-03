@@ -120,7 +120,7 @@
 
                         <td><?php echo $marca;?></td>
                         <td><?php echo $titulo;?></td>
-                        <td><a href="verImagen.php?id=<?php echo $id_traje ?>"><img height="80" width="80" src="data:image/*;base64,<?php echo base64_encode($imagen); ?>"></a></td>
+                        <td><a data-bs-toggle="modal" data-bs-target="#imagen<?php echo $id_traje; ?>"><img width="80" height="80" src="data:image/*;base64,<?php echo base64_encode($imagen);?>"></a>
                         <td><?php echo $stock;?></td>
                         <td>$<?php echo $precio;?></td>
                         <td>
@@ -254,6 +254,26 @@
                         
                         </td>
                         </tr>
+                        
+                        <!--Modal para mostrar imagen-->
+
+                        <div class="modal fade" id="imagen<?php echo $id_traje; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel"><?php echo $titulo;?></h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row justify-content-center">
+                                            <img height="450" width="450" src="data:image/*;base64,<?php echo base64_encode($imagen);?>">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!---->
 
                         <?php 
                         }
