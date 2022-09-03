@@ -13,9 +13,13 @@
         $id_gen = $_POST['gen'];
         $id_color = $_POST['col'];
         $id_talla = $_POST['tal'];
-        //$id_estado = $_POST['est'];
         $id_cat = $_POST['cat'];
-   
+
+        $validacion = mysqli_query($con, "SELECT * from se_puede where id = '".$id."'");
+        if(mysqli_num_rows($validacion) > 0){
+            echo '<script language="javascript">alert("El producto se encuentra reservado"); window.location.href="index.php"</script>';
+        }
+
     ?>
 
     <div class="container mt-3 pb-5 pt-3 cont-css">
