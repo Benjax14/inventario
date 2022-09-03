@@ -40,7 +40,6 @@
                         <table class="table table-striped table-bordered">
 
                                 <tr>
-                                    <th>ID</th>
                                     <th>Imagen</th>
                                     <th>Marca</th>
                                     <th>Título</th>
@@ -76,16 +75,6 @@
                                             $producto = $rows['id'];
                                             
                                     ?>
-
-                                    <td>
-                                        <?php
-                                            foreach($pro as $row):
-                                                if($row['id'] == $producto){
-                                                    echo $reserva;
-                                                }
-                                            endforeach    
-                                        ?>
-                                    </td>
 
                                     <td>
                                         <?php foreach($pro as $row): ?>

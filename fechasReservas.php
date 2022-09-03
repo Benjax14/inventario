@@ -20,7 +20,6 @@
                         <table class="table table-striped table-bordered">
 
                                 <tr>
-                                    <th>ID</th>
                                     <th>Marca</th>
                                     <th>Imagen</th>
                                     <th>Título</th>
@@ -77,10 +76,6 @@
                                                 $fecha = $rows['fecha_retiro'];
                                                 $status = $rows['id_status'];
                                     ?>
-
-                                    <td>
-                                        <?php echo $rows['id_reserva']; ?>
-                                    </td>
 
                                     <td>
                                         <?php foreach($pro as $row): ?>
