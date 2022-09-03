@@ -85,7 +85,6 @@
                     <table class="table table-striped table-bordered">
                     
                         <tr>
-                        <th>ID</th>
                         <th>Marca</th>
                         <th>Título</th>
                         <th>Imagen</th>
@@ -125,7 +124,6 @@
 
                         ?>
 
-                        <td><?php echo $id_traje;?></td>
                         <td><?php echo $marca;?></td>
                         <td><?php echo $titulo;?></td>
                         <td><a href="verImagen.php?id=<?php echo $id_traje ?>"><img height="80" width="80" src="data:image/*;base64,<?php echo base64_encode($imagen); ?>"></a></td>
