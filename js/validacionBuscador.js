@@ -13,3 +13,19 @@ function buscador() {
     }
 
 }
+
+function buscador2(){
+
+    const minimo = document.getElementById('val_minimo').value;
+    const maximo = document.getElementById('val_maximo').value;
+
+        if(minimo === '' || maximo === ''){
+            alert('Por favor de ingresar un rango de precios.');
+            return false;
+        }else if(minimo > maximo){
+            alert('Rango de precios incorrecto. Vuelva a intentar.');
+            return false;
+        }
+
+
+}

@@ -2,18 +2,6 @@
 
 <link rel="stylesheet" href="./css/buscador.css">
 
-    
-    <script type="text/javascript">
-        function confirmDelete(){
-           var respuesta = confirm("¿Estás seguro que desea eliminar este producto de la lista?");
-           if(respuesta == true){
-               return true;
-           }
-           else{
-               return false;
-           } 
-        }
-    </script>
 
     <?php require('./header.php'); ?>
     <?php require('./modelos/enlistarTrajesBackend.php'); ?>
@@ -40,27 +28,14 @@
 
                 </div>
 
-                <!--<div class="col-auto" style="margin-top: 22px">
-                <form action="buscadorEnlistar.php" method="POST" onsubmit="return buscador();">
-                <div class="input-group">
-                    <div class="form-outline">
-                        <input type="search" class="form-control" id="pal" name="palabra" placeholder="Ingrese aquí su busqueda">
-                    </div>
-                    <button type="submit" class="btn btn-light">
-                        <img height="20" width="20" src="./lmnts_grfcs/search.png">
-                    </button>
-                </div>
-                
-                </form>
-                -->
                     <h6>Buscar por rango de precios</h6>
 
-                    <form action="buscadorPreciosEnlistar.php" method="POST">
+                    <form action="buscadorPreciosEnlistar.php" method="POST" onsubmit="return buscador2();">
                         <div class="input-group">
                                 <span class="input-group-text">$</span>
-                                <input type="number" name="min" placeholder="Ej: 15000">
+                                <input type="number" name="min" id="val_minimo" placeholder="Ej: 15000">
                                 <span class="input-group-text">-</span>
-                                <input type="number" name="max" placeholder="Ej: 30000">
+                                <input type="number" name="max" id="val_maximo" placeholder="Ej: 30000">
                                     <button type="submit" class="btn btn-light">
                                         <img height="20" width="20" src="./lmnts_grfcs/search.png">
                                     </button>
@@ -292,7 +267,20 @@
             <a href="#top">
                 <img width="30" height="30" src="./lmnts_grfcs/up-arrow.png" >
             </a>
-        </div>        
+        </div>
+        
+        <script type="text/javascript">
+        function confirmDelete(){
+            var respuesta = confirm("¿Estás seguro que desea eliminar este producto de la lista?");
+        if(respuesta == true){
+            return true;
+        }
+        else{
+            return false;
+            } 
+        }
+        </script>
+
         <script src="./js/validacionBuscador.js"></script>
         <script src="./js/validacionFiltro.js"></script>
 </body>
