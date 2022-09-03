@@ -69,7 +69,7 @@
                 </div>
                 
                 <div class="col-md-4">
-                    <h6>Coooooooooolor</h6>
+                    <h6>Color</h6>
                     <select name="select_color" class="form-select" required>
                         <option>-Seleccione el color-</option>
                         <option value="1">Negro</option>
