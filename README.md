@@ -12,14 +12,13 @@ El proyecto Zaiko Kanri es una aplicación web que corre sobre el siguiente soft
 - Base de Datos MySQL 8.0.29
 
 Configuraciones de Ejecución para Entorno de Desarrollo/Produccción
-Indicar instrucciones de como obtener una copia del proyecto para ejecutarlo localmente.
+
+
+
 
 Credenciales de Base de Datos y variables de ambiente
 
-Editar el archivo src/env.php
-
-
-IMPORTANTE: Por razones de Seguridad NUNCA debes guardar las credenciales y subirlas al repositorio
+Editar el archivo modelos/conexion.php
 
 
 Docker, Máquina Virtual, Sistema Operativa
@@ -72,30 +71,8 @@ Ir a un navegador web y ejecutar la siguiente url mi-proyecto
 
 Construido con
 
-Laravel - The web framework used
-Symfony - The web framework used
-Rails - The web framework used
-Django - The web framework used
-Composer - Dependency Management
-Pipenv - Dependency Management
-Rubygem - Dependency Management
-Bundler - Dependency Management
-NPM - Dependency Management
-Yarn - Dependency Management
-Bootstrap 4 - HTML, CSS, and JS Frontend Framework
-AdminLTE Bootstrap - Admin Dashboard Template
-
-
-Licencia
-Este proyecto fue construido con la licencia AAA, - ver LICENSE.md para mayor información
-
-Contribuir al Proyecto
-
-Por favor lea las instrucciones para contribuir al proyecto en CONTRIBUTING.md
-
-
+- Bootstrap 4 - HTML, CSS, and JS Frontend Framework
 
 Agradecimientos
 
-Basado en el código de .....
-etc
+- Mi mamita
