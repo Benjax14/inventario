@@ -3,6 +3,7 @@
     
     if(!empty($_POST)) {
         
+        //$seconds = 2;
         $id = mysqli_real_escape_string ($con, strip_tags($_POST["clave"]));
         $marca_produc = mysqli_real_escape_string ($con, strip_tags($_POST["marca_produc"]));
         $nombre_produc = mysqli_real_escape_string ($con, strip_tags($_POST["nombre_produc"]));
@@ -24,7 +25,8 @@
         unset($_POST["select_gen"]);
         unset($_POST["select_cat"]);    
 
-        header("Location:../index.php");
+        //sleep($seconds);
+        echo '<script language="javascript">alert("¡Producto modificado!");window.location.href="../index.php"</script>';
          
     }
     

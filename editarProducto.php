@@ -42,17 +42,20 @@
 
                 <div class="col-md-4">
                     <h6>Marca</h6>
-                    <input class="input-group mb-3 form-control" type="text" name="marca_produc" id="marca_produc" value="<?php echo $marca; ?>" placeholder="Escriba aquí...">
+                    <label>Marca del producto</label>
+                    <input class="input-group mb-3 form-control" type="text" name="marca_produc" id="marca_produc" value="<?php echo $marca; ?>" placeholder="Ej: Falabella">
                 </div>
 
                 <div class="col-md-4">
                     <h6>Nombre del producto</h6>
-                    <input class="input-group mb-3 form-control" type="text" name="nombre_produc" id="nombre_produc" placeholder="Escriba aquí..." value="<?php echo $titulo; ?>" >
+                    <label>Modelo y tipo de producto</label>
+                    <input class="input-group mb-3 form-control" type="text" name="nombre_produc" id="nombre_produc" placeholder="Ej: Traje negro" value="<?php echo $titulo; ?>" >
                 </div>
 
                 <div class="col-md-4">
                     <h6>Precio $</h6>
-                    <input type="number" name="precio" class="input-group mb-3 form-control" id="precio" placeholder="Ingrese valor..." value="<?php echo $precio; ?>" >
+                    <label>El precio tiene que ser mayor a $5000</label>
+                    <input type="number" name="precio" class="input-group mb-3 form-control" id="precio" placeholder="Ej: 5000" value="<?php echo $precio; ?>" >
                 </div>
             </div>
 
@@ -60,11 +63,13 @@
 
                 <div class="col-md-4">
                     <h6>Stock</h6>
-                    <input type="number" name="stock" class="input-group mb-3 form-control" id="stock" placeholder="Ingrese stock..." value="<?php echo $stock; ?>" >
+                    <label>El stock tiene que ser mayor a 1</label>
+                    <input type="number" name="stock" class="input-group mb-3 form-control" id="stock" placeholder="Ej: 5" value="<?php echo $stock; ?>" >
                 </div>
 
                 <div class="col-md-4">
                 <h6>Talla</h6>
+                <label>Las tallas son las siguientes: </label>
                     <select name="select_talla" id="talla" class="form-select" value="<?php echo $id_talla; ?>" >
                         <option>-Seleccione una talla-</option>
                         <?php foreach($consultaTal as $row):?>
@@ -86,8 +91,9 @@
 
                 <div class="col-md-4">
                     <h6>Categoría</h6>
+                    <label>Las categorías son las siguientes: </label>
                     <select name="select_cat" id="cat" class="form-select" value="<?php echo $id_cat; ?>" >
-                        <option>-Seleccione la categoria-</option>
+                        <option>-Seleccione la categoría-</option>
                         <?php foreach($consultaCat as $row):?>
 
                             <?php
@@ -110,6 +116,7 @@
                 
                 <div class="col-md-4">
                     <h6>Color del producto</h6>
+                    <label>Los colores son los siguientes: </label>
                     <select name="select_color" id="color" class="form-select" value="<?php echo $id_color; ?>" >
                         <option>-Seleccione color-</option>
                         <?php foreach($consultaCol as $row):?>
@@ -131,6 +138,7 @@
                 
                 <div class="col-md-4">
                     <h6>Género</h6>
+                    <label>Los géneros son los siguientes: </label>
                     <select name="select_gen" id="genx" class="form-select" value="<?php echo $id_gen; ?>" >
                         <option>-Seleccione género-</option>
                         <?php foreach($consultaGen as $row):?>
@@ -159,8 +167,8 @@
                 </div>
             </div>
         </form>      
-    </div>
-    
+        </div>
+
     <!--SCRIPTS ÚTILES-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="./js/validacionEditar.js"></script>

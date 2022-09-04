@@ -1,5 +1,7 @@
 <body>
 
+<link rel="stylesheet" href="./css/buscador.css">
+
 <script type="text/javascript">
         function confirmDelete(){
            var respuesta = confirm("¿Esta seguro que desea eliminar este producto de la lista?");
