@@ -2,18 +2,6 @@
 
 <link rel="stylesheet" href="./css/buscador.css">
 
-<script type="text/javascript">
-        function confirmDelete(){
-           var respuesta = confirm("¿Esta seguro que desea eliminar este producto de la lista?");
-           if(respuesta == true){
-               return true;
-           }
-           else{
-               return false;
-           } 
-        }
-    </script>
-
 
 <?php require('./header.php'); ?>
 <?php require_once("./modelos/conexion.php");?>
@@ -35,25 +23,31 @@
 
                     <form action="./buscadorEnlistar.php" method="POST" onsubmit="return buscador();">
 
-                        <input type="text" name="palabra" id="pal" class="src" placeholder="Escriba aquí el producto a buscar">
+                        <input type="search" name="palabra" id="pal" class="src" placeholder="Escriba aquí el producto a buscar">
 
                     </form>
 
                 </div>
                     <h6>Buscar por rango de precios</h6>
 
-                    <form action="buscadorPreciosEnlistar.php" method="POST">
+                    <form action="buscadorPreciosEnlistar.php" method="POST" onsubmit="return buscador2();">
                         <div class="input-group">
-                                <span class="input-group-text">$</span>
-                                <input type="number" name="max" placeholder="Ej: 15000">
-                                <span class="input-group-text">-</span>
-                                <input type="number" name="min" placeholder="Ej: 30000">
+                        <span class="input-group-text" style="padding: 6px">$</span>
+                            <div class="col-xs-2">
+                                <input type="number" name="min" class="form-control" id="val_minimo" placeholder="Ej: 15000">
+                                </div>
+                                <span class="input-group-text" style="padding: 6px">-</span>
+                                <div class="col-xs-2">
+                                <input type="number" name="max" class="form-control" id="val_maximo" placeholder="Ej: 30000">
+                                </div>
                                     <button type="submit" class="btn btn-light">
                                         <img height="20" width="20" src="./lmnts_grfcs/search.png">
                                     </button>
                         </div>
-                            
                     </form>
+
+
+
                     <form action="filtroEnlistar.php" method="POST" onsubmit="return filtro();">
                 <select class="col-auto" style="margin-top: 1px; padding: 6px"name="categoria" >
                         <option selected>---Seleccione Categoria---</option>
@@ -96,7 +90,6 @@
                     <table class="table table-striped table-bordered">
                     
                         <tr>
-                        <th>ID</th>
                         <th>Marca</th>
                         <th>Titulo</th>
                         <th>Imagen</th>
@@ -139,7 +132,6 @@
                                 $id_cat = $rows['id_cat'];
                         ?>
 
-                        <td><?php echo $id_traje;?></td>
                         <td><?php echo $marca;?></td>
                         <td><?php echo $titulo;?></td>
                         <td><a href="verImagen.php?id=<?php echo $id_traje ?>"><img height="80" width="80" src="data:image/*;base64,<?php echo base64_encode($imagen); ?>"></a></td>
@@ -160,6 +152,15 @@
                                 <?php if($row['id_talla'] == $id_talla){?>
                                     <?php echo $row['nom_talla'];?>
                                 <?php } ?> 
+                            <?php endforeach?>
+
+                        </td>
+                        <td>
+
+                            <?php foreach($consultaGen as $row):?>
+                            <?php if($row['id_gen'] == $id_gen){?>
+                            <?php echo $row['nom_gen'];?>
+                            <?php } ?> 
                             <?php endforeach?>
 
                         </td>
@@ -279,6 +280,17 @@
                     <img width="30" height="30" src="./lmnts_grfcs/up-arrow.png" >
                 </a>
             </div>
+        <script type="text/javascript">
+        function confirmDelete(){
+           var respuesta = confirm("¿Esta seguro que desea eliminar este producto de la lista?");
+           if(respuesta == true){
+               return true;
+           }
+           else{
+               return false;
+           } 
+        }
+        </script>
     <script src="./js/validacionBuscador.js"></script>
     <script src="./js/validacionFiltro.js"></script>
 </body>
