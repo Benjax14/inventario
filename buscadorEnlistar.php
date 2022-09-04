@@ -22,7 +22,7 @@
 
                     <form action="./buscadorEnlistar.php" method="POST" onsubmit="return buscador();">
 
-                        <input type="text" name="palabra" id="pal" class="src" placeholder="Escriba aquí el producto a buscar">
+                        <input type="search" name="palabra" id="pal" class="src" placeholder="Escriba aquí el producto a buscar">
 
                     </form>
 
@@ -31,16 +31,22 @@
 
                     <form action="buscadorPreciosEnlistar.php" method="POST" onsubmit="return buscador2();">
                         <div class="input-group">
-                        <span class="input-group-text">$</span>
-                                <input type="number" name="min" id="val_minimo" placeholder="Ej: 15000">
-                                <span class="input-group-text">-</span>
-                                <input type="number" name="max" id="val_maximo" placeholder="Ej: 30000">
+                        <span class="input-group-text" style="padding: 6px">$</span>
+                            <div class="col-xs-2">
+                                <input type="number" name="min" class="form-control" id="val_minimo" placeholder="Ej: 15000">
+                                </div>
+                                <span class="input-group-text" style="padding: 6px">-</span>
+                                <div class="col-xs-2">
+                                <input type="number" name="max" class="form-control" id="val_maximo" placeholder="Ej: 30000">
+                                </div>
                                     <button type="submit" class="btn btn-light">
                                         <img height="20" width="20" src="./lmnts_grfcs/search.png">
                                     </button>
                         </div>
                             
                     </form>
+
+                    
                     <form action="filtroEnlistar.php" method="POST" onsubmit="return filtro();">
                 <select class="col-auto" style="margin-top: 1px; padding: 6px" id="cat" name="categoria" >
                         <option selected>---Seleccione Categoria---</option>
