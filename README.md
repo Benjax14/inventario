@@ -14,21 +14,17 @@ El proyecto Zaiko Kanri es una aplicación web que corre sobre el siguiente soft
 Configuraciones de Ejecución para Entorno de Desarrollo/Produccción
 
 
-
-
 Credenciales de Base de Datos y variables de ambiente
 
 Editar el archivo modelos/conexion.php
 
 
-Docker, Máquina Virtual, Sistema Operativa
+Docker
 
-Con una terminal situarse dentro del directorio raiz donde fue clonado este repositorio, por ej: ~/git/mi-proyecto/.
+Con una terminal situarse dentro del directorio raiz donde fue clonado este repositorio, por ej: ~/git/inventario/.
 Una vez situado en la raiz del proyecto, dirigirse al directorio docker y ejecutar lo siguiente para construir la imagen docker:
 
-docker build -t mi-proyecto:version1.0 .
-
-
+docker build -t inventario:version1.0 .
 
 Una vez construida la imagen, lanzar un contenedor montando un volumen que contenga el código del repositorio, en el directorio /var/www/html del contenedor.
 
@@ -39,33 +35,10 @@ Iniciar el servicio de Apache Http Server
 
 service apache2 start
 
-
-Iniciar el servicio de Nginx
-
-service nginx start
-
-
-Iniciar el servicio de NodeJS
-
-nodejs index.js
-
-
-
 Instalar dependencias del proyecto
 Cambiar al directorio web document root (Apache) del contenedor:
 
-cd /var/www/html
-
-
-Instalar las dependencias del proyecto con composer
-
-composer install
-
-
-Cambiar permisos para permitir la correcta ejecución de la aplicación en entorno local
-
-chmod -R 777 web/assets/ logs/ cache/
-
+cd /var/www/html/inventario
 
 Ir a un navegador web y ejecutar la siguiente url mi-proyecto
 
