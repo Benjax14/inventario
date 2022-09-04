@@ -8,7 +8,7 @@ El proyecto Zaiko Kanri es una aplicación web que corre sobre el siguiente soft
 - Ubuntu 20.04.4
 - Apache 2.4.41
 - PHP 7.4 (ext: curl, mysql)
-- Base de Datos MySQL 8.0.29
+- Base de Datos MySQL 8.0.29 o 5.7
 
 ## Configuraciones de Ejecución para Entorno de Desarrollo/Producción
 
