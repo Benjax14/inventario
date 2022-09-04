@@ -46,7 +46,7 @@
                         </div>
                             
                     </form>
-                    <form action="filtroEnlistar.php" method="POST" onsubmit="Filtro();">
+                    <form action="filtroEnlistar.php" method="POST" onsubmit="return Filtro();">
                 <select class="col-auto" style="margin-top: 1px; padding: 6px" id="cat" name="categoria" >
                         <option selected>---Seleccione Categoria---</option>
                         <option value="1">Traje</option>
