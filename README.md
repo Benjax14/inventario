@@ -30,20 +30,19 @@ Clonar el repositorio
 
 Editar el archivo modelos/conexion.php
 
+## Docker o Maquina virtual Ubuntu LTS
+
 ### Docker
+### Maquina virtual Ubuntu LTS
 
-Con una terminal situarse dentro del directorio raiz donde fue clonado este repositorio, por ej: ~/git/inventario/.
-Una vez situado en la raiz del proyecto, dirigirse al directorio docker y ejecutar lo siguiente para construir la imagen docker:
+Con una terminal situarse dentro del directorio raiz donde fue clonado este repositorio, por ej: ~/git/mi-proyecto/.
+Una vez situado en la raiz del proyecto, ejecutar el siguiente comando para ejecutar el localhost
 
-docker build -t inventario:version1.0 .
+`$php -S localhost:8080`
 
-Una vez construida la imagen, lanzar un contenedor montando un volumen que contenga el código del repositorio, en el directorio /var/www/html del contenedor.
+Posteriormente, puede dirigir al url que deja por defecto: http://localhost:8080
 
-docker run --rm -ti -p 80:80 -v /home/usuario/git/mi-proyecto/:/var/www/html mi-proyecto:version1.0 bash
-
-Iniciar el servicio de Apache Http Server
-
-`$service apache2 start`
+> Si el repositorio esta en una carpeta mas atras (Ej: ../inventario/index.php) se debe agregar al la url de http://localhost:8080
 
 ## Instalar dependencias del proyecto
 Cambiar al directorio web document root (Apache) del contenedor:
