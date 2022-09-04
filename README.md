@@ -55,7 +55,7 @@ Una vez situado en la raiz del proyecto, ejecutar el siguiente comando para ejec
 
 Posteriormente, puede dirigir al url que deja por defecto: http://localhost:8080
 
-> Si el repositorio esta en una carpeta mas atras (Ej: ../inventario/index.php) se debe agregar al la url de http://localhost:8080
+> Si el repositorio está en una carpeta más atras (Ej: ../inventario/index.php) se debe agregar a la url de http://localhost:8080
 
 ## Instalar dependencias del proyecto
 Cambiar al directorio web document root (Apache) del contenedor:
