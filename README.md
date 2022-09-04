@@ -1,6 +1,6 @@
 # Zaiko Kanri
 
-Un servicio de arriendo de trajes, vestidos y accesorios generico que resuelve la necesidad de registrar productos y posteriormente reservarlos, esta dirigido para PYMES que necesiten un sistema sencillo y facil de entender.
+Un servicio de arriendo de trajes, vestidos y accesorios generico que resuelve la necesidad de registrar productos y posteriormente reservarlos, está dirigido para PYMES que necesiten un sistema sencillo y facil de entender.
 
 ## Software stack
 El proyecto Zaiko Kanri es una aplicación web que corre sobre el siguiente software:
@@ -30,16 +30,18 @@ Clonar el repositorio
 
 Editar el archivo modelos/conexion.php
 
-<?php
+```
+    <?php
 
-$db_host="url_host"; 
-$db_user="usuario";
-$db_pass="contraseña";
-$db_name="nombre_basededatos";
+    $db_host="url_host"; 
+    $db_user="usuario";
+    $db_pass="contraseña";
+    $db_name="nombre_basededatos";
 
-$con = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
+    $con = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
 
-?>
+    ?>
+```
 
 ## Docker o Maquina virtual Ubuntu LTS
 
@@ -77,6 +79,7 @@ Ir a un navegador web y ejecutar la siguiente url .../inventario/index.php
 ## Construido con
 
 - Bootstrap 4 - HTML, CSS, and JS Frontend Framework
+- JavaScript - programming language
 
 ## Agradecimientos
 
