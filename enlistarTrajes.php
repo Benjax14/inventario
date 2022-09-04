@@ -46,7 +46,7 @@
                         </div>
                             
                     </form>
-                    <form action="filtroEnlistar.php" method="POST" onsubmit="return filtro();">
+                    <form action="filtroEnlistar.php" method="POST" onsubmit="filtro();">
                 <select class="col-auto" style="margin-top: 1px; padding: 6px" id="cat" name="categoria" >
                         <option selected>---Seleccione Categoria---</option>
                         <option value="1">Traje</option>
@@ -54,7 +54,7 @@
                         <option value="3">Accesorio</option>
                 </select>
                 <select class="custom-select" style="margin:1px; padding: 6px" id="col" name="color" >
-                        <option value="0">---Seleccione Color---</option>
+                        <option selected>---Seleccione Color---</option>
                         <option value="1">Negro</option>
                         <option value="2">Blanco</option>
                         <option value="3">Rojo</option>
@@ -62,7 +62,7 @@
                         <option value="5">Gris</option>
                 </select>
                 <select class="custom-select" style="margin:1px; padding: 6px"id="tal" name="Talla" >
-                        <option value="0">---Seleccione Talla---</option>
+                        <option selected>---Seleccione Talla---</option>
                         <option value="1">S</option>
                         <option value="2">M</option>
                         <option value="3">L</option>
@@ -70,7 +70,7 @@
                         <option value="5">XXL</option>
                 </select>
                 <select class="custom-select" style="margin:1px; padding: 6px" id="gen" name="Genero" >
-                        <option value="0">---Seleccione Genero---</option>
+                        <option selected>---Seleccione Genero---</option>
                         <option value="1">Masculino</option>
                         <option value="2">Femenino</option>
                         <option value="3">Unisex</option>
