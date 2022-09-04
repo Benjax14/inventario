@@ -1,4 +1,4 @@
-function filtro(){
+function Filtro(){
 
 const cat = document.getElementById('cat').value;
 const col = document.getElementById('col').value;
