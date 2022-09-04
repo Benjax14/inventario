@@ -19,7 +19,7 @@
 
                     <form action="./busquedaReservas.php" method="POST">
 
-                        <input type="text" name="busqueda" class="src" placeholder="Escriba aquí para buscar un cliente">
+                        <input type="search" name="busqueda" class="src" placeholder="Escriba aquí para buscar un cliente">
                 
                     </form>
 
