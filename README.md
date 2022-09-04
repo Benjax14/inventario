@@ -10,7 +10,7 @@ El proyecto Zaiko Kanri es una aplicación web que corre sobre el siguiente soft
 - PHP 7.4 (ext: curl, mysql)
 - Base de Datos MySQL 8.0.29
 
-## Configuraciones de Ejecución para Entorno de Desarrollo/Produccción
+## Configuraciones de Ejecución para Entorno de Desarrollo/Producción
 
 ### Git
 
