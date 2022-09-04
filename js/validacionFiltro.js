@@ -6,8 +6,8 @@ const talla = document.getElementById('tal').value;
 const gen = document.getElementById('gen').value;
 
 if(cat === '---Seleccione Categoria---' && col === '---Seleccione Color---' && talla === '---Seleccione Talla---' && gen === '---Seleccione Genero---'){
-    alert('Por favor seleccione al menos un filtro a buscar');
-    return false;
+    alert('Debe seleccionar, al menos, un filtro para buscar');
+            return false;
 }
 
 }
