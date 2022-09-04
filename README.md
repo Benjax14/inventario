@@ -6,10 +6,10 @@ Un servicio de arriendo de trajes, vestidos y accesorios generico que resuelve l
 Software stack
 El proyecto Zaiko Kanri es una aplicación web que corre sobre el siguiente software:
 
-Ubuntu 20.04.4
-Apache 2.4.41
-PHP 7.4 (ext: curl, gd, mbstring, mysql, pgsql, xml, zip)
-Base de Datos MySQL 8.0.29
+- Ubuntu 20.04.4
+- Apache 2.4.41
+- PHP 7.4 (ext: curl, gd, mbstring, mysql, pgsql, xml, zip)
+- Base de Datos MySQL 8.0.29
 
 Configuraciones de Ejecución para Entorno de Desarrollo/Produccción
 Indicar instrucciones de como obtener una copia del proyecto para ejecutarlo localmente.
