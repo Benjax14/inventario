@@ -30,6 +30,17 @@ Clonar el repositorio
 
 Editar el archivo modelos/conexion.php
 
+<?php
+
+$db_host="url_host"; 
+$db_user="usuario";
+$db_pass="contraseña";
+$db_name="nombre_basededatos";
+
+$con = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
+
+?>
+
 ## Docker o Maquina virtual Ubuntu LTS
 
 ### Docker
