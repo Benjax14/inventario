@@ -70,7 +70,7 @@ Iniciar el servicio de Apache Http Server
 
 `$service apache2 start`
 
-Comando para ingresar a MySql y poblarla
+Comando para ingresar a MySql y poblar con datos
 
 `$docker exec -ti basedatos /bin/bash`
 
