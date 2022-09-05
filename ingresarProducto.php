@@ -53,7 +53,7 @@
                 <div class="col-md-4">
                     <h6>Categoría</h6>
                     <select name="select" id="cat" class="form-select" >
-                        <option>-Seleccione la categoria-</option>
+                        <option>-Seleccione la categoría-</option>
                         <option value="1">Traje</option>
                         <option value="2">Vestido</option>
                         <option value="3">Accesorio</option>
