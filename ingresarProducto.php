@@ -17,17 +17,17 @@
 
                 <div class="col-md-4">
                     <h6>Marca del producto</h6>
-                    <input type="text" class="input-group mb-3 form-control" name="marca_produc" id="mar" placeholder="Escriba aquí..." required>
+                    <input type="text" class="input-group mb-3 form-control" name="marca_produc" id="mar" placeholder="Escriba aquí..." >
                 </div>
 
                 <div class="col-md-4">
                     <h6>Nombre del producto</h6>
-                    <input type="text" class="input-group mb-3 form-control" name="nombre_produc" id="nom" placeholder="Escriba aquí..." required>
+                    <input type="text" class="input-group mb-3 form-control" name="nombre_produc" id="nom" placeholder="Escriba aquí..." >
                 </div>
 
                 <div class="col-md-4">
                     <h6>Precio</h6>
-                    <input type="number" name="precio" class="input-group mb-3 form-control" id="pre" placeholder="Ingrese valor..." required>
+                    <input type="number" name="precio" class="input-group mb-3 form-control" id="pre" placeholder="Ingrese valor..." >
                 </div>
             </div>
 
@@ -35,12 +35,12 @@
 
                 <div class="col-md-4">
                     <h6>Stock</h6>
-                    <input type="number" name="stock" class="input-group mb-3 form-control" id="sto" placeholder="Ingrese stock..." required>
+                    <input type="number" name="stock" class="input-group mb-3 form-control" id="sto" placeholder="Ingrese stock..." >
                 </div>
 
                 <div class="col-md-4">
                 <h6>Talla</h6>
-                    <select name="select_talla" id="tal" class="form-select" required>
+                    <select name="select_talla" id="tal" class="form-select" >
                         <option>-Seleccione una talla-</option>
                         <option value="1">S</option>
                         <option value="2">M</option>
@@ -52,7 +52,7 @@
 
                 <div class="col-md-4">
                     <h6>Categoría</h6>
-                    <select name="select" id="cat" class="form-select" required>
+                    <select name="select" id="cat" class="form-select" >
                         <option>-Seleccione la categoria-</option>
                         <option value="1">Traje</option>
                         <option value="2">Vestido</option>
@@ -65,12 +65,12 @@
 
                 <div class="col-md-8 mt-3">
                     <h6 for="formFile" class="form-label">Adjunte imagen</h6>
-                    <input class="form-control" name="imagen" type="file" id="formFile" multiple accept="image/*" required>
+                    <input class="form-control" name="imagen" type="file" id="formFile" multiple accept="image/*" >
                 </div>
                 
                 <div class="col-md-4">
                     <h6>Color</h6>
-                    <select name="select_color" id="col" class="form-select" required>
+                    <select name="select_color" id="col" class="form-select" >
                         <option>-Seleccione el color-</option>
                         <option value="1">Negro</option>
                         <option value="2">Blanco</option>
@@ -81,7 +81,7 @@
                 </div>
                 <div class="col-md-4">
                     <h6>Género</h6>
-                    <select name="select_gen" id="gen" class="form-select" required>
+                    <select name="select_gen" id="gen" class="form-select" >
                         <option>-Seleccione el género-</option>
                         <option value="1">Masculino</option>
                         <option value="2">Femenino</option>
