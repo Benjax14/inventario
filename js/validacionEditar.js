@@ -14,7 +14,7 @@ function checkInputs() {
     expresionRegular = /^[a-zA-ZÀ-ÿ0-9\s]{1,}$/
 
     if(marca === '' || titulo === ''){
-        alert('No puede tener espacios vacíos');
+        alert('No puede tener campos vacíos');
         return false;
     }
     if(precio < 5000 || precio > 100000){
