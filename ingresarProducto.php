@@ -4,7 +4,7 @@
     <?php include('./modelos/ingresarProdBackend.php')?>  
 
     <div class="container mt-3 pb-5 pt-3 cont-css">
-        <form action="./modelos/ingresarProdBackend.php" method="POST" enctype="multipart/form-data" name="formulario" onsubmit="return checkInputs();">
+        <form action="./modelos/ingresarProdBackend.php" method="POST" enctype="multipart/form-data" name="formulario" onsubmit="return check();">
             <div class="row justify-content-center">
                 <div class="col-auto"> 
                     <h1>Registro para el inventario</h1>
