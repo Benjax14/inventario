@@ -86,7 +86,7 @@ Posteriormente, puede dirigir al url que deja por defecto: http://localhost:8080
 > Si el repositorio está en una carpeta más atras (Ej: ../inventario/index.php) se debe agregar a la url de http://localhost:8080
 
 ## Instalar dependencias del proyecto
-Cambiar al directorio web document root (Apache) del contenedor:
+Cambiar al directorio web document root (Apache) del contenedor
 
 `$cd /var/www/html/inventario`
 
