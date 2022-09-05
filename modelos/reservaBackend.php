@@ -54,10 +54,10 @@
             unset($_POST["email"]);
             unset($_POST["fecha"]);
 
-            echo '<script language="javascript">alert("La reserva se ha guardado exitosamente");window.location.href="../agendarReserva.php"</script>';
+            echo '<script language="javascript">alert("La reserva se ha guardado exitosamente.");window.location.href="../agendarReserva.php"</script>';
 
         }elseif(mysqli_num_rows($validacion1) > 1) {
-            echo '<script language="javascript">alert("Ha ocurrido un error!, ya hay dos reservas registradas con estos datos"); window.location.href="../agendarReserva.php"</script>';
+            echo '<script language="javascript">alert("¡Ha ocurrido un error!, ya hay dos reservas registradas para este cliente."); window.location.href="../agendarReserva.php"</script>';
         }
         
         //Verificacion de si la tabla de la reserva esta vacia
@@ -93,7 +93,7 @@
             unset($_POST["email"]);
             unset($_POST["fecha"]);
                             
-            echo '<script language="javascript">alert("La reserva se ha guardado exitosamente");window.location.href="../agendarReserva.php"</script>';
+            echo '<script language="javascript">alert("La reserva se ha guardado exitosamente.");window.location.href="../agendarReserva.php"</script>';
         
         }
 
@@ -130,11 +130,11 @@
             unset($_POST["email"]);
             unset($_POST["fecha"]);
 
-            echo '<script language="javascript">alert("La reserva se ha guardado exitosamente");window.location.href="../agendarReserva.php"</script>';
+            echo '<script language="javascript">alert("La reserva se ha guardado exitosamente.");window.location.href="../agendarReserva.php"</script>';
             
         }elseif(mysqli_num_rows($validacion2) >= 1){
 
-            echo '<script language="javascript">alert("¡Ha ocurrido un error!, El rut no corresponde al cliente"); window.location.href="../agendarReserva.php"</script>';
+            echo '<script language="javascript">alert("¡Ha ocurrido un error!, El RUT no corresponde al cliente."); window.location.href="../agendarReserva.php"</script>';
     
         }
            
