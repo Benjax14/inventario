@@ -17,8 +17,8 @@ function checkInputs() {
         alert('No puede tener espacios vacíos');
         return false;
     }
-    if(precio < 5000){
-        alert('No puede valer menos de 5000 pesos');
+    if(precio < 5000 || precio > 100000){
+        alert('No puede valer menos de 5000 pesos y más de 100000');
         return false;
     }
     if(stock < 1){
