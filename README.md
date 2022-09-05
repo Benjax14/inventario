@@ -16,15 +16,15 @@ El proyecto Zaiko Kanri es una aplicación web que corre sobre el siguiente soft
 
 Instalar Git
 
-`$sudo apt-get install git-all`
+`sudo apt-get install git-all`
 
 Al tener ya instalado git, se tiene que cambiar al directorio web document root
 
-`$cd /var/www/html/`
+`cd /var/www/html/`
 
 Clonar el repositorio
 
-`$git clone https://github.com/Benjax14/inventario.git`
+`git clone https://github.com/Benjax14/inventario.git`
 
 ### Credenciales de Base de Datos y variables de ambiente
 
@@ -52,34 +52,34 @@ Editar el archivo modelos/conexion.php
 Con una terminal situarse dentro del directorio raiz donde fue clonado este repositorio, por ej: ~/git/mi-proyecto/.
 Una vez situado en la raiz del proyecto, dirigirse al directorio docker y ejecutar lo siguiente para construir la imagen docker:
 
-`$docker build -t inventario .`
+`docker build -t inventario .`
 
 Instalar el contenedor de MySql
 
-`$docker pull mysql:5.7`
+`docker pull mysql:5.7`
 
 Ejecutamos el siguiente comando para iniciar MySql
 
-`$docker run -p 3306:3306 --name *NombreDB* -v *URL_DB* -e MYSQL_ROOT_PASSWORD=*ContraseñaDB* -d mysql:5.7`
+`docker run -p 3306:3306 --name *NombreDB* -v *URL_DB* -e MYSQL_ROOT_PASSWORD=*ContraseñaDB* -d mysql:5.7`
 
 Una vez construida la imagen, lanzar un contenedor montando un volumen que contenga el código del repositorio, en el directorio /var/www/html del contenedor.
 
-`$docker run -dtip 8080:80 --name *NombreProyecto* -v ${PWD}:/var/www/html/inventario --link *NombreDB* inventario`
+`docker run -dtip 8080:80 --name *NombreProyecto* -v ${PWD}:/var/www/html/inventario --link *NombreDB* inventario`
 
 Iniciar el servicio de Apache Http Server
 
-`$service apache2 start`
+`service apache2 start`
 
 Comando para ingresar a MySql y poblar con datos
 
-`$docker exec -ti basedatos /bin/bash`
+`docker exec -ti basedatos /bin/bash`
 
 ### Maquina virtual Ubuntu LTS
 
 Con una terminal situarse dentro del directorio raiz donde fue clonado este repositorio, por ej: ~/git/mi-proyecto/.
 Una vez situado en la raiz del proyecto, ejecutar el siguiente comando para ejecutar el localhost
 
-`$php -S localhost:8080`
+`php -S localhost:8080`
 
 Posteriormente, puede dirigir al url que deja por defecto: http://localhost:8080
 
@@ -88,19 +88,19 @@ Posteriormente, puede dirigir al url que deja por defecto: http://localhost:8080
 ## Instalar dependencias del proyecto
 Cambiar al directorio web document root (Apache) del contenedor
 
-`$cd /var/www/html/inventario`
+`cd /var/www/html/inventario`
 
 Instalar PHP 7.4 y Apache2
 
-`$sudo apt install php-7.4 libapache2-mod-php7.4 -y`
+`sudo apt install php-7.4 libapache2-mod-php7.4 -y`
 
 Instalar MySql
 
-`$apt-get install -y php7.4-mysql`
+`apt-get install -y php7.4-mysql`
 
 Reinicie el servicio Apache
 
-`$service apache2 restart`
+`service apache2 restart`
 
 Ir a un navegador web y ejecutar la siguiente url .../inventario/index.php
 
