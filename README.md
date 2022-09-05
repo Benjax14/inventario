@@ -90,11 +90,11 @@ Cambiar al directorio web document root (Apache) del contenedor:
 
 `$cd /var/www/html/inventario`
 
-Instalar php7.4 y apache2
+Instalar PHP 7.4 y Apache2
 
 `$sudo apt install php-7.4 libapache2-mod-php7.4 -y`
 
-Instalar mysql
+Instalar MySql
 
 `$apt-get install -y php7.4-mysql`
 
