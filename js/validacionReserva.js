@@ -16,27 +16,27 @@ function checkInputs() {
     }
 
     if(nombre === ''){
-        alert('Por favor llene el espacio vacio del nombre para continuar');
+        alert('Por favor llene el espacio vacío del nombre para continuar');
         return false;
     }
 
     if(rut === ''){
-        alert('Por favor llene el espacio vacio del rut para continuar');
+        alert('Por favor llene el espacio vacío del RUT para continuar');
         return false;
     }
 
     if(fono === ''){
-        alert('Por favor llene el espacio vacio del fono para continuar');
+        alert('Por favor llene el espacio vacío del fono para continuar');
         return false;
     }
 
     if(email === ''){
-        alert('Por favor llene el espacio vacio del email para continuar');
+        alert('Por favor llene el espacio vacío del email para continuar');
         return false;
     }
 
     if(fecha === ''){
-        alert('Por favor llene el espacio vacio de la fecha para continuar');
+        alert('Por favor llene el espacio vacío de la fecha para continuar');
         return false;
     }
 
@@ -56,22 +56,22 @@ function checkInputs() {
     }
 
     if(!expresionNum.test(rut)){
-        alert('Solo se permiten numeros en el rut');
+        alert('Solo se permiten números en el RUT');
         return false;
     }
 
-    if(rut < 50000000 || rut > 250000000){
-        alert('El rut no es válido');
+    if(rut < 30000000 || rut > 260000000){
+        alert('El RUT no es válido');
         return false;
     }
 
     if(!expresionNum.test(fono)){
-        alert('Solo se permiten numeros en el fono');
+        alert('Solo se permiten números en el fono');
         return false;
     }
 
     if(fono.length < 8 || fono.length > 8 || fono <= 0){
-        alert('El numero de telefono no es válido');
+        alert('El número de teléfono no es válido');
         return false;
     }
 
