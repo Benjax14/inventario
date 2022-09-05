@@ -23,7 +23,10 @@ function buscador2(){
             alert('Por favor de ingresar un rango de precios.');
             return false;
         }else if(minimo > maximo){
-            alert('Rango de precios incorrecto. Vuelva a intentar.');
+            alert('Rango de precios incorrectos. Vuelva a intentar.');
+            return false;
+        }else if(minimo <= 0){
+            alert('Precio Inválido');
             return false;
         }
 
