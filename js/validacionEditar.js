@@ -21,7 +21,7 @@ function checkInputs() {
         alert('No puede valer menos de 5000 pesos y más de 100000');
         return false;
     }
-    if(stock < 1){
+    if(stock < 1 || stock > 50){
         alert('Stock Inválido');
         return false;
     }
