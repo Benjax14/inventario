@@ -55,7 +55,7 @@
                         <option value="2">Vestido</option>
                         <option value="3">Accesorio</option>
                 </select>
-                <select class="custom-select" style="margin:1px; padding: 6px" id="col"name="color" >
+                <select class="custom-select" style="margin:1px; padding: 6px" id="col" name="color" >
                         <option selected>---Seleccione Color---</option>
                         <option value="1">Negro</option>
                         <option value="2">Blanco</option>
