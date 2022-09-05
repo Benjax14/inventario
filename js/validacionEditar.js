@@ -30,7 +30,7 @@ function checkInputs() {
         return false;
     }
     if(categoria === "-Seleccione la categoría-"){
-        alert('Seleccione una categoria')
+        alert('Seleccione una categoría')
         return false;
     }
     if(color === "-Seleccione color-"){
