@@ -25,7 +25,7 @@ function buscador2(){
         }else if(minimo > maximo){
             alert('Rango de precios incorrectos. Vuelva a intentar.');
             return false;
-        }else if(minimo <= 0){
+        }else if(minimo < 0){
             alert('Precio Inválido');
             return false;
         }
