@@ -112,3 +112,4 @@ Ir a un navegador web y ejecutar la siguiente url .../inventario/index.php
 ## Agradecimientos
 
 - Mi mamita
+- Mi mamita y papito
