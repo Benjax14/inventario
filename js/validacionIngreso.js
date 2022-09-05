@@ -11,8 +11,12 @@ function check() {
 
     expresionRegular = /^[a-zA-ZÀ-ÿ\s]{1,}$/
 
-    if(!expresionRegular.test(marca) || !expresionRegular.test(nombre)){
-        alert('Solo se permiten letras mayúsculas y minúsculas');
+    if(!expresionRegular.test(marca)){
+        alert('Debe ingresar la marca del producto con letras mayúsculas y/o minusculas');
+        return false;
+    }
+    if(!expresionRegular.test(nombre)){
+        alert('Debe ingresar el nombre del producto con letras mayúsculas y/o minusculas');
         return false;
     }
 
